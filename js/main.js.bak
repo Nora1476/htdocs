@@ -1,0 +1,145 @@
+	function format(d) {
+    return (
+        'Name : ' 
+        + d.name 
+        + '<br>' 
+        + 'Salary: ' 
+        + d.salary 
+        + '<br>'
+        + '<br>'
+        +'<button type="button" id="btn_modiEm" class="btn btn-warning">Modify</button>'
+        +'<button type="button" id="btn_delEm" onclick="delEm()"class="btn btn-light">Delete</button>'
+             );
+	}
+	
+	 		//Add Delete employee
+		
+	
+	$(document).ready(function() {  
+
+			var dt = $('#example').DataTable({	
+			  processing: true,
+        serverSide: true,
+        ajax: 'index_rowdetail.php',
+        columns: [
+            {
+                class: 'details-control',
+                orderable: false,
+                data: null,
+                defaultContent: '',
+            },
+            { data: 'name' },
+            { data: 'position' },
+            { data: 'office' },
+            { data: 'extn' },
+            { data: 'start_date' },
+        ],
+        order: [[5, 'desc']],
+       
+		  	search: {
+		       return: true,
+		    },
+		    
+	  	});
+	  	
+	  	// Array to track the ids of the details displayed rows
+	    var detailRows = [];
+	 
+	    $('#example tbody').on('click', 'tr td.details-control', function () {
+	        var tr = $(this).closest('tr');
+	        var row = dt.row(tr);
+	        var idx = detailRows.indexOf(tr.attr('id'));
+	 
+	        if (row.child.isShown()) {
+	            tr.removeClass('details');
+	            row.child.hide();
+	 
+	            // Remove from the 'open' array
+	            detailRows.splice(idx, 1);
+	        } else {
+	            tr.addClass('details');
+	            row.child(format(row.data())).show();
+	 
+	            // Add to the 'open' array
+	            if (idx === -1) {
+	                detailRows.push(tr.attr('id'));
+	            }
+	        }
+	    });
+	 
+	    // On each draw, loop over the `detailRows` array and show any child rows
+	    dt.on('draw', function () {
+	        detailRows.forEach(function(id, i) {
+	            $('#' + id + ' td.details-control').trigger('click');
+	        });
+	    });
+			
+		
+ 
+	 	// Add Employee  Modal
+	 	$("#btn_employee").click(function() {
+		   $("#add_Em").modal("show");  
+	  });
+	  
+	  // close modal
+		$("#add_Em #close_modal").click(function() {
+		   $("#add_Em").modal("hide");
+	  });
+	  
+	  //Add new employee
+	  $("#add_Em #btn_newemployee").click(function() {
+	  	
+	  	var name  = $('#add_Em #name').val();
+	  	var position  = $('#add_Em #position').val();
+	  	var office  = $('#add_Em #office').val();
+	  	var extn  = $('#add_Em #extn').val();
+	  	var salary  = $('#add_Em #salary').val();
+	  	
+	    $.ajax({
+			 	url: "table_addNew.php",
+			 	type: "POST",
+			 	data:{
+			 		name: name,
+			 		position: position,
+			 		office: office,
+			 		extn: extn,
+			 		salary: salary
+			 	},
+			 	success: function(data){
+			 		alert('Data updated successfully !');	
+			 		$("#add_Em").modal("hide");
+			 		//data table 특정 부분 리로드
+			 		$('#example').DataTable().ajax.reload();
+			 	}		
+			})
+	  });
+	 
+	 
+		//Add Delete employee
+		
+		
+		function delEm() {
+			
+		   alert("test");
+				
+		};
+
+	  
+	  //contact form 유효성 검사 (-ing)
+		$("#submitBtn").click(function(){
+			alert("validation check");
+		});
+		
+		
+		//btnlist 클릭시 contact list 이동
+		$('#btnlist').click(function(){
+			 $(location).attr('href','contactlist.php');
+		});
+
+		
+			
+		
+	    
+	  
+	});
+	
