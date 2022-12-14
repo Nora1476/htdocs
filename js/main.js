@@ -110,7 +110,7 @@
 		  var currentRow = $(this).closest("tr"); 
 		  var data = $('#example').DataTable().row(currentRow).data();
 		  var str = data['id'];
-	 		//id°ª ÅØ½ºÆ® ÀÚ¸£±â 
+	 		//idï¿½ï¿½ ï¿½Ø½ï¿½Æ® ï¿½Ú¸ï¿½ï¿½ï¿½ 
 	 		var id = str.replace("row_", "");
  
 		  $('.modal-body #id').val(id);
@@ -169,12 +169,12 @@
 	 	$("#example tbody").on('click', 'tr td #btn_delEm', function (e) {
 	 		
 	 		
-	 		//hidden column µ¥ÀÌÅÍ °¡Á®¿À±â
+	 		//hidden column ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 		e.preventDefault(); 
 	 		var currentRow = $(this).closest("tr"); 
 	 		var data = $('#example').DataTable().row(currentRow).data();
 	 		var str = data['id'];
-	 		//id°ª ÅØ½ºÆ® ÀÚ¸£±â 
+	 		//idï¿½ï¿½ ï¿½Ø½ï¿½Æ® ï¿½Ú¸ï¿½ï¿½ï¿½ 
 	 		var id = str.replace("row_", "");
 	 		console.log(id);
 	 		
@@ -187,7 +187,7 @@
 				},
 				success: function(data){
 					alert('Data deleted successfully !');
-					//data table Æ¯Á¤ ºÎºÐ ¸®·Îµå
+					//data table Æ¯ï¿½ï¿½ ï¿½Îºï¿½ ï¿½ï¿½ï¿½Îµï¿½
 				  $('#example').DataTable().ajax.reload();
 				}		
 			});
@@ -232,7 +232,7 @@
 			 	success: function(data){
 			 		alert('Data updated successfully !');	
 			 		$("#add_Em").modal("hide");
-			 		//data table Æ¯Á¤ ºÎºÐ ¸®·Îµå
+			 		//data table Æ¯ï¿½ï¿½ ï¿½Îºï¿½ ï¿½ï¿½ï¿½Îµï¿½
 			 		$('#example').DataTable().ajax.reload();
 			 	}		
 			})
@@ -242,13 +242,13 @@
 
 
 	  
-	  //contact form À¯È¿¼º °Ë»ç (-ing)
+	  //contact form ï¿½ï¿½È¿ï¿½ï¿½ ï¿½Ë»ï¿½ (-ing)
 		$("#submitBtn").click(function(){
 			alert("validation check");
 		});
 		
 		
-		//btnlist Å¬¸¯½Ã contact list ÀÌµ¿
+		//btnlist Å¬ï¿½ï¿½ï¿½ï¿½ contact list ï¿½Ìµï¿½
 		$('#btnlist').click(function(){
 			 $(location).attr('href','contactlist.php');
 		});
