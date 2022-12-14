@@ -1,20 +1,9 @@
 
 
-#about, #clients, #portfolio, #contact{
-  margin : 10% 10%; 
-  padding-top: 5%;
-}
-
 /*header*/
-.c-navbar-wrapper {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.c-layout-header .c-brand {
-  margin: 15px 15px 21px 15px;
-}
+
+
 
 
 /*Slide*/
@@ -22,77 +11,23 @@
 
 
 
-
 /*About*/
 
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 0;
-}
-.c-content-feature-5 .c-text{
-  width: 100%;
-}
-.c-content-feature-5 .c-photo {
-  position: static;
-  margin: 0 auto;
 
-}
+
 
 /*Clients*/
-#clients{
-  margin-top: 100px 0;
-}
-.owl-carousel{
-  padding: 80px 0;
-}
+
 
 
 /*Porfolio*/
 
 
-.port_detail{
-  display: grid;
-  grid-template-areas: 
-          "img info";
-  grid-template-columns: 2fr 1fr;
-  align-items: flex-start;
-  gap: 5px;
-  margin :50px;
-}
-
-
-.port_img{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  grid-area: img;
-  background-color: rgb(165, 163, 161);
-}
-
-.port_info{
-  width:430px;
-  grid-area: info;
-  padding: 20px 20px;
-  background-color: none;
-  position: sticky;
-  top: 110px;
-}
-
-.port_content p{
-  font-size: 12px;
-}
 
 
 
 
 /*contact*/
-
-.c-content-box.c-size-md{
-  padding: 0;
-}
 
 
 
@@ -123,94 +58,3 @@ i{
 
 
 
-@media (min-width: 992px){
-  .c-layout-header .c-brand {
-    margin: 15px 0 0 0;
-  }
-
-  .c-layout-header-fixed .c-layout-page {
-    margin-top: 170px;
-  }
-
-  .c-page-on-scroll.c-layout-header-fixed .c-layout-header .c-brand {
-    transition: margin 0.2s;
-    margin: 15px 0 0 0;     
-  }
-  .c-page-on-scroll.c-layout-header-fixed .c-layout-header{
-    height: 120px;
-
-  }
-
-}
-
-
-
-@media (max-width: 991px) {
-
- 
-  .c-layout-header .c-brand {
-    float: none !important;
-    display: block;
-    margin: 15px 15px 21px 15px;
-  }
-
-  .c-navbar-wrapper {
-    display: block;
-  }
-
-  .c-layout-header .c-navbar .c-mega-menu{
-    margin-top: -13px;
-  }
-
-   /*about*/
-   .row{
-    display: grid;
-    grid-template-areas: 
-                "col7" 
-                "col5";
-  }
-
-  .col-md-7{
-    display: flex;
-    grid-area: col7;
-  }
-
-  .col-md-5{
-    display: flex;
-    grid-area: col5;
-  }
-
-  /*Portfolio*/
-  .port_detail{
-    display: grid;
-    margin: 0 auto;
-    grid-template-areas: 
-            "info"
-            "img";
-    grid-template-columns: 1fr;
-    margin: 10px;
-    gap:0;
-    font-size: medium;
-  }
-
-  .port_info{
-    width:100%;
-    display: block;
-    margin: 0 auto;
-    grid-area: info;
-    padding: 20px 20px;
-    background-color: white;
-    position: sticky;
-    top: 65px;
-  }
-
-  .port_content_detail{
-    width:430px;
-  }
-  
-  img{
-    max-width: 100%;
-  }
-  
-
-}
