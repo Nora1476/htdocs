@@ -19,7 +19,7 @@
  */
  
 // DB table to use
-$table = 'employee';
+$table = 'gongan';
  
 // Table's primary key
 $primaryKey = 'id';
@@ -31,15 +31,16 @@ $primaryKey = 'id';
 $columns = array(
  		array( 'db' => 'id', 'dt' => 0 ),
     array( 'db' => 'name', 'dt' => 1 ),
-    array( 'db' => 'position',  'dt' => 2 ),
-    array( 'db' => 'office',   'dt' => 3 ),
-    array( 'db' => 'extn',     'dt' => 4 ),
-    array( 'db' => 'salary',     'dt' => 6 ),
+    array( 'db' => 'phone',  'dt' => 2 ),
+    array( 'db' => 'location',   'dt' => 3 ),
+    array( 'db' => 'lease_agreement',     'dt' => 4 ),
+    array( 'db' => 'type',     'dt' => 5 ),
+    array( 'db' => 'content',     'dt' => 6 ),
     array(
-        'db'        => 'start_date',
-        'dt'        => 5,
+        'db'        => 'created',
+        'dt'        => 7,
         'formatter' => function( $d, $row ) {
-            return date( 'Y/ m/ d', strtotime($d));
+            return date( 'Y/m/d  H:i:s', strtotime($d));
         }
     )
 );

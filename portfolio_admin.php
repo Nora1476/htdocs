@@ -45,8 +45,26 @@ Follow: http://www.twitter.com/themehats
 					<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
 					<!-- END THEME STYLES -->
 					<link rel="shortcut icon" href="favicon.ico" />
+					<link href="./main.css" rel="stylesheet" type="text/css">
 	</head>
 	<body class="c-layout-header-fixed c-layout-header-mobile-fixed">
+		
+		
+		<?php
+			session_start();
+			print_r($_SESSION);
+
+			//로그인 세션이 없을 경우 admin_amin.php로 이동하여 로그인 유도
+			if(!isset($_SESSION['username'])) {
+			   
+				echo "<script>alert('로그인이 필요한 페이지 입니다.')</script>";
+	    	echo "<script>location.replace('index_admin.php');</script>";
+	    	
+			} 
+		?>
+		
+		
+		
 		<!-- BEGIN: LAYOUT/HEADERS/HEADER-ONEPAGE -->
 		<!-- BEGIN: HEADER -->
 		<header class="c-layout-header c-layout-header-onepage c-layout-header-4 c-layout-header-default-mobile" id="home"
@@ -76,17 +94,14 @@ Follow: http://www.twitter.com/themehats
             data-onepage-animation-speed="700">
 							<ul class="nav navbar-nav c-theme-nav">
 								<li class="c-onepage-link ">
-									<a href="index.html#about" class="c-link">About</a>
+									<a href="#" class="c-link">Portfolio</a>
 								</li>
 								<li class="c-onepage-link ">
-									<a href="index.html#portfolio" class="c-link">Portfolio</a>
+									<a href="index_admin.php#contact" class="c-link">Contact</a>
 								</li>
-								<li class="c-onepage-link ">
-									<a href="index.html#contact" class="c-link">Contact</a>
-								</li>
-								<li class="c-onepage-link ">
-									<a href="index.html#clients" class="c-link">Clients</a>
-								</li>
+								<li class="c-onepage-link " >
+		                <a href='admin_logout.php' class="c-link">Logout</a>
+		              </li>
 							</ul>
 						</nav>
 						<!-- END: MEGA MENU -->
@@ -112,6 +127,13 @@ Follow: http://www.twitter.com/themehats
 			<!-- BEGIN: PAGE CONTENT -->
 			<div class="c-content-box c-size-md">
 				<div class="container">
+					<div class="cbp-l-filters-button" style="display:flex; flex-direction: row-reverse;">
+						<div>
+							<a href="portfolio_write.php">
+								<button class="btn c-btn-dark-2 c-btn-uppercase c-btn-bold c-btn-square" style="margin-right:10px;">Register</button>
+							</a>
+						</div>
+					</div>
 					<div id="filters-container" class="cbp-l-filters-button">
 						<div data-filter="*" class="cbp-filter-item-active cbp-filter-item">
             All 
