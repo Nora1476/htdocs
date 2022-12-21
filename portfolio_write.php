@@ -47,12 +47,7 @@ Follow: http://www.twitter.com/themehats
 					<!-- END THEME STYLES -->
 					<link rel="shortcut icon" href="favicon.ico" />
 					<link href="./main.css" rel="stylesheet" type="text/css">
-					
-					
-					<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-			    <script>
-			      ClassicEditor.create( document.querySelector( '#editor' ) );
-			    </script>
+
 								
 	</head>
 	
@@ -63,7 +58,7 @@ Follow: http://www.twitter.com/themehats
 		
 		<?php
 			session_start();
-			print_r($_SESSION);
+			//print_r($_SESSION);
 
 			//로그인 세션이 없을 경우 admin_amin.php로 이동하여 로그인 유도
 			if(!isset($_SESSION['username'])) {
@@ -78,8 +73,7 @@ Follow: http://www.twitter.com/themehats
 		
 		<!-- BEGIN: LAYOUT/HEADERS/HEADER-ONEPAGE -->
 		<!-- BEGIN: HEADER -->
-		<header class="c-layout-header c-layout-header-onepage c-layout-header-4 c-layout-header-default-mobile" id="home"
-    data-minimize-offset="40">
+		<header class="c-layout-header c-layout-header-onepage c-layout-header-4 c-layout-header-default-mobile" id="home" data-minimize-offset="40">
 			<div class="c-navbar">
 				<div class="container-fluid">
 					<!-- BEGIN: BRAND -->
@@ -105,7 +99,7 @@ Follow: http://www.twitter.com/themehats
             data-onepage-animation-speed="700">
 							<ul class="nav navbar-nav c-theme-nav">
 								<li class="c-onepage-link ">
-									<a href="#" class="c-link">Portfolio</a>
+									<a href="portfolio_admin.php" class="c-link">Portfolio</a>
 								</li>
 								<li class="c-onepage-link ">
 									<a href="index_admin.php#contact" class="c-link">Contact</a>
@@ -138,19 +132,88 @@ Follow: http://www.twitter.com/themehats
 			<!-- BEGIN: PAGE CONTENT -->
 			<div class="c-content-box c-size-md">
 				<div class="container">
-					<div class="cbp-l-filters-button" style="display:flex; flex-direction: row-reverse;">
-						<div>
-							<a href="portfolio_write.php">
-								<button class="btn c-btn-dark-2 c-btn-uppercase c-btn-bold c-btn-square" style="margin-right:10px;">Register</button>
-							</a>
+					
+					<div class="row">
+						<div class="col-md-12">
+							<div class="c-content-panel">
+								<div class="c-body">
+									<div class="c-content-title-1 c-title-md c-margin-b-20 clearfix">
+										<h3 class="c-center c-font-uppercase c-font-bold">포트폴리오 등록하기</h3><br>
+										<div class="c-line-center c-theme-bg"></div><br>
+									</div>
+									
+									<form enctype="multipart/form-data" id="uploadForm" class="form-horizontal" method="post">
+										<div class="form-group">
+											<label for="p_title" class="col-md-2 control-label">제목</label>
+											<div class="col-md-8">
+												<input type="text" class="form-control  c-square c-theme" name="p_title" id="p_title" placeholder="제목을 입력하세요.">
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="p_type" class="col-md-2 control-label">형태</label>
+											<div class="col-md-8">
+												<input type="text" class="form-control  c-square c-theme" name="p_type" id="p_type" placeholder="ex) APT ">
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="p_location" class="col-md-2 control-label">위치</label>
+											<div class="col-md-8">
+												<input type="text" class="form-control  c-square c-theme" name="p_location" id="p_location" placeholder="ex) 부산 금정구 금강로 404">
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="p_area" class="col-md-2 control-label">평수</label>
+											<div class="col-md-8">
+												<input type="text" class="form-control  c-square c-theme" name="p_area" id="p_area" placeholder="ex) 33평(111㎡) ">
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label for="summernote" class="col-md-2 control-label">내용</label>
+											<div class="col-md-8">
+												 <textarea  id="summernote" name="editordata"></textarea>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="exampleInputFile" class="col-md-2 control-label" >이미지 파일</label>
+											<div class="col-md-8 input_wrap">
+												
+												<div>
+									        <div class="input_wrap">
+									            <a href="javascript:" onclick="fileUploadAction();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
+									            <input type="file" name="files[]" id="input_imgs" multiple/>
+									        </div>
+										    </div>
+
+										    <div>
+									        <div class="imgs_wrap">
+									            <img id="img" />
+									        </div>
+									        <h5><b>이미지 미리보기</b></h5>
+										    </div>
+
+											</div>    
+										</div>
+										
+										<div class="form-group c-margin-t-40">
+											<div class="col-sm-offset-5 col-md-8">
+												<button type="submit" class="btn c-btn-dark-2 c-btn-uppercase c-btn-bold c-btn-square">등록하기</button>												
+											</div>
+										</div>
+																	
+									</form>
+									
+
+								</div>
+							</div>
 						</div>
 					</div>
 					
-					<form action="" method="POST">
-			      <textarea name="text" id="editor"></textarea>
-			    <p><input type="submit" value="전송"></p>
-			    </form>
-				
+
 
 				</div>
 			</div>
@@ -229,10 +292,97 @@ Follow: http://www.twitter.com/themehats
 		<script src="./assets/base/js/app.js" type="text/javascript"></script>
 		
 		
+		<!-- 글쓰기 에디터 -->
+		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+		
+		
 		<script>
+		
+		 // 이미지 정보들을 담을 배열
+     var sel_files = [];
+			
     $(document).ready(function () {
-      App.init(); // init core        
+      App.init(); // init core 
+     
+      $('#summernote').summernote({
+        placeholder: '내용을 입력하세요!',
+        tabsize: 2,
+        height: 400
+      });
+      
+      //이미지 선택시 미리보기
+      $("#input_imgs").on("change", handleImgFileSelect);
+        
+        
+      //파일 업로드
+      $('#uploadForm').on('submit', function(e){  
+         e.preventDefault();  
+         $.ajax({  
+		       url: "portfolio_insert.php",  
+		       type: "POST",  
+		       data: new FormData(this),  
+		       contentType: false,  
+		       processData:false,  
+		       success: function(data)  
+          {  
+	          alert("파일이 업로드되었습니다."); 
+	         	//location.replace('portfolio_admin.php');
+	        }  
+         });  
+      }); 
+      
+ 
+          
     });
+    
+    
+    function fileUploadAction() {
+      //console.log("fileUploadAction");
+      $("#input_imgs").trigger('click');
+    }
+
+    function handleImgFileSelect(e) {
+
+      // 이미지 정보들을 초기화
+      sel_files = [];
+      $(".imgs_wrap").empty();
+
+      var files = e.target.files;
+      var filesArr = Array.prototype.slice.call(files);  //새로운 Array를 변환하기 위하여 Function.prototype.call()으로 바인딩(주어진 this값 및 전달된 인수와 함께 호출)
+
+      var index = 0;
+      filesArr.forEach(function(f) {
+          if(!f.type.match("image.*")) {
+              alert("확장자는 이미지 확장자만 가능합니다.");
+              return;
+          }
+
+          sel_files.push(f); //이미지 정보 배열에 추가
+
+          var reader = new FileReader();
+          reader.onload = function(e) {
+              var html = "<a href=\"javascript:void(0);\" onclick=\"deleteImageAction("+index+")\" id=\"img_id_"+index+"\"><img src=\"" + e.target.result + "\" data-file='"+f.name+"' class='selProductFile' title='Click to remove'></a>";
+              $(".imgs_wrap").append(html);
+              index++;
+
+          }
+          reader.readAsDataURL(f);
+          
+      });
+    }
+
+    function deleteImageAction(index) {
+      console.log("index : "+index);
+      console.log("sel length : "+sel_files.length);
+
+      sel_files.splice(index, 1);
+
+      var img_id = "#img_id_"+index;
+      $(img_id).remove(); 
+    }
+    
+    
 		</script>
 		<!-- END: THEME SCRIPTS -->
 		<!-- BEGIN: PAGE SCRIPTS -->
@@ -242,24 +392,29 @@ Follow: http://www.twitter.com/themehats
 		
 		
 		<!-- 글쓰기 에디터 -->
-		<script src="ckeditor/build/ckeditor.js"></script>
-    <script>
-      ClassicEditor.create( document.querySelector( '#editor' ), {
-    toolbar: [
-      'heading',
-      '|',
-      'bold',
-      'italic'
-    	]
-  	} );
-    </script>
+
 		
 		
 	</body>
 	
 	<style>
-  .ck-editor__editable { height: 500px; }
+  .ck-editor__editable { height: 400px; }
   .ck-content { font-size: 12px; }
+  input[type=file] {
+      display: none;
+  }
+
+  .imgs_wrap {
+      border: 2px solid #A8A8A8;
+      margin-top: 20px;
+      padding: 5px;
+  }
+  .imgs_wrap img {
+      max-width: 150px;
+      max-height: 100px;
+      margin: 5px;
+
+  }
 	</style>
 	
 </html>
