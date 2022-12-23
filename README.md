@@ -1,2 +1,0 @@
-# htdocs
- jquery, php, mysql

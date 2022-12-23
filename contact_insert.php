@@ -5,6 +5,7 @@
   $user = "mulzoo1";
   $password = "mulzoo@#34";
   $dbname = "web_1";
+  
   $connect = mysqli_connect($servername, $user, $password, $dbname);
   
   
@@ -41,3 +42,5 @@
 		//}
   
  ?>
+ 
+ 

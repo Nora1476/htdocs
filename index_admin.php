@@ -61,7 +61,7 @@ Follow: http://www.twitter.com/themehats
 		<?php
 
 			session_start();
-			print_r($_SESSION);
+			//print_r($_SESSION);
 
 			//로그인 세션이 있을 경우 admin_amin.php로 이동
 			if(isset($_SESSION['username'])) {
@@ -116,6 +116,7 @@ Follow: http://www.twitter.com/themehats
 		</header>
 		<!-- END: HEADER -->
 		<!-- END: LAYOUT/HEADERS/HEADER-ONEPAGE -->
+		
 		<!-- BEGIN: PAGE CONTAINER -->
 		<div class="c-layout-page">
 			<section class="c-layout-revo-slider c-layout-revo-slider-7" dir="ltr">
@@ -157,6 +158,7 @@ Follow: http://www.twitter.com/themehats
 					</div>
 				</div>
 			</section>
+			
 			<section id="contact" style="display:none;">
 				<!-- BEGIN: CONTENT/CONTACT/FEEDBACK-2 -->
 				<div class="c-content-box c-size-md c-no-padding c-bg-img-center">
@@ -181,6 +183,7 @@ Follow: http://www.twitter.com/themehats
 													<th>유형</th>
 													<th>기타내용</th>
 													<th>문의일자</th>
+													<th>사진</th>
 												</tr>
 											</thead>
 											<tfoot>
@@ -193,6 +196,7 @@ Follow: http://www.twitter.com/themehats
 													<th>유형</th>
 													<th>기타내용</th>
 													<th>문의일자</th>
+													<th>사진</th>
 												</tr>
 											</tfoot>
 										</table>
@@ -206,9 +210,9 @@ Follow: http://www.twitter.com/themehats
 				<!-- END: CONTENT/CONTACT/FEEDBACK-2 -->
 			</section>
 			
-			
 			<!--Modal-->
-			<div class="modal fade" id="modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade" id="modal" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+									data-backdrop="static" data-keyboard="false">
 				<div class="modal-dialog">
 					<div class="modal-content c-square">
 						<div class="modal-header">
@@ -261,6 +265,7 @@ Follow: http://www.twitter.com/themehats
 			
 		</div>
 		<!-- END: PAGE CONTAINER -->
+		
 		<!-- BEGIN: LAYOUT/FOOTERS/FOOTER-5 -->
 		<a name="footer"></a>
 		<footer class="c-layout-footer c-layout-footer-3 c-bg-dark">
@@ -350,33 +355,14 @@ Follow: http://www.twitter.com/themehats
       App.init(); // init 
       
       
-      //dataTable 게시판
-      var table = $('#example').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: 'contact_load.php',
-        //hidden column id
-        columnDefs: [
-            {
-              target: 0,
-              visible: false,
-            },
-        ],
-        order: [[0, 'desc']],
-
-		  	search: {
-		       return: true,
-		    },
-
-    	});
-
+     
     	//모달창 오픈
   	  $('#example tbody').on('click', 'tr', function (e) {
 
   	  	e.preventDefault();
 	      var data = table.row(this).data();
 
-	      $("#modal").modal("show").modal({backdrop:'static'});
+	      $("#modal").modal("show").modal({backdrop:'static', keyboard:false});
 	      	$('#id').val(data[0]);
 				  $('#name').val(data[1]);
 					$('#phone').val(data[2]);

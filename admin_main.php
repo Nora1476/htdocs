@@ -74,7 +74,7 @@ Follow: http://www.twitter.com/themehats
 			<?php
 
 			session_start();
-			print_r($_SESSION);
+			//print_r($_SESSION);
 
 			//로그인 세션이 없을 경우 admin_amin.php로 이동하여 로그인 유도
 			if(!isset($_SESSION['username'])) {
@@ -158,19 +158,6 @@ Follow: http://www.twitter.com/themehats
 		            관리자 페이지에 오신 것을 환영합니다.
 		          </h5>
 							
-							<!--로그인 -->
-							<!--
-		          <form class="form-inline" method="POST" id="adminLogin" action="admin_login.php" style="display:none;">
-		            <div class="form-group">
-		              <input type="text" name="admin" class="form-control c-bg-transparent input-lg c-theme c-square" placeholder="아이디">
-		            </div>
-		            <div class="form-group">
-		              <input type="password" name="password" class="form-control c-bg-transparent input-lg c-theme c-square" placeholder="패스워드">
-		            </div>
-		            <input type="submit" class="btn btn-lg btn-danger c-btn-uppercase c-btn-square c-btn-bold" value="LOGIN">
-		          </form>
-		          -->
-		          
 		        </div>
 		        <div class="tp-banner rev_slider" data-version="5.0">
 		          <ul>
@@ -250,7 +237,7 @@ Follow: http://www.twitter.com/themehats
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">×</span>&nbsp&nbsp</button>
-								<h4 class="modal-title" id="exampleModalLabel">문의글 확인하기</h4>
+								<h4 class="modal-title" id="exampleModalLabel">문의글 수정 및 삭제하기</h4>
 							</div>
 							<div class="modal-body" style="font-size:10px;">
 								<form>
@@ -415,22 +402,23 @@ Follow: http://www.twitter.com/themehats
 
 		    	});
 
-		    	//모달창 오픈
-		  	  $('#example tbody').on('click', 'tr', function (e) {
+	    	//모달창 오픈
+	  	  $('#example tbody').on('click', 'tr', function (e) {
 
-		  	  	e.preventDefault();
-			      var data = table.row(this).data();
+	  	  	e.preventDefault();
+		      var data = table.row(this).data();
 
-			      $("#modal").modal("show").modal({backdrop:'static'});
-			      	$('#id').val(data[0]);
-						  $('#name').val(data[1]);
-							$('#phone').val(data[2]);
-							$('#location').val(data[3]);
-							$('#lease_agreement').val(data[4]);
-							$('#type').val(data[5]);
-							$('#content').val(data[6]);
-							$('#created').val(data[7]);
-		    	});
+		      $("#modal").modal("show").modal({backdrop:'static'});
+		      	$('#id').val(data[0]);
+					  $('#name').val(data[1]);
+						$('#phone').val(data[2]);
+						$('#location').val(data[3]);
+						$('#lease_agreement').val(data[4]);
+						$('#type').val(data[5]);
+						$('#content').val(data[6]);
+						$('#created').val(data[7]);
+	    	});
+
 
 
 		    // modify

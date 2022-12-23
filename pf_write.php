@@ -39,7 +39,7 @@ Follow: http://www.twitter.com/themehats
 					<link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
 					<!-- END: BASE PLUGINS -->
 					<!-- BEGIN THEME STYLES -->
-					<link href="./assets/demos/default/css/plugins.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/demos/default/css/pluGins.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
 					<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
 					<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
@@ -99,7 +99,7 @@ Follow: http://www.twitter.com/themehats
             data-onepage-animation-speed="700">
 							<ul class="nav navbar-nav c-theme-nav">
 								<li class="c-onepage-link ">
-									<a href="portfolio_admin.php" class="c-link">Portfolio</a>
+									<a href="pf_admin.php" class="c-link">Portfolio</a>
 								</li>
 								<li class="c-onepage-link ">
 									<a href="index_admin.php#contact" class="c-link">Contact</a>
@@ -151,9 +151,9 @@ Follow: http://www.twitter.com/themehats
 										</div>
 										
 										<div class="form-group">
-											<label for="p_type" class="col-md-2 control-label">형태</label>
+											<label for="p_kind" class="col-md-2 control-label">분류</label>
 											<div class="col-md-8">
-												<input type="text" class="form-control  c-square c-theme" name="p_type" id="p_type" placeholder="ex) APT ">
+												<input type="text" class="form-control  c-square c-theme" name="p_kind" id="p_kind" placeholder="ex) APT ">
 											</div>
 										</div>
 										
@@ -171,12 +171,25 @@ Follow: http://www.twitter.com/themehats
 											</div>
 										</div>
 										
+										
 										<div class="form-group">
-											<label for="summernote" class="col-md-2 control-label">내용</label>
-											<div class="col-md-8">
-												 <textarea  id="summernote" name="editordata"></textarea>
-											</div>
+									   	<label for="inputPassword3" class="col-md-2 control-label">내용</label>
+									   	<div class="col-md-8">
+									   		<textarea class="form-control  c-square c-theme" name="p_content" rows="10"></textarea>
+									    </div>
 										</div>
+										
+										<div class="form-group">
+												<label class="col-md-2 control-label">공개여부</label>
+												<div class="col-md-8">
+													<label class="radio-inline">
+														<input type="radio" name="p_open" id="p_open" value="공개" checked> 공개
+													</label>
+													<label class="radio-inline">
+														<input type="radio" name="p_open" id="p_open" value="비공개"> 비공개
+													</label>
+												</div>
+											</div>
 
 										<div class="form-group">
 											<label for="exampleInputFile" class="col-md-2 control-label" >이미지 파일</label>
@@ -198,6 +211,8 @@ Follow: http://www.twitter.com/themehats
 
 											</div>    
 										</div>
+										
+										
 										
 										<div class="form-group c-margin-t-40">
 											<div class="col-sm-offset-5 col-md-8">
@@ -285,16 +300,13 @@ Follow: http://www.twitter.com/themehats
 		<script src="./assets/plugins/js-cookie/js.cookie.js" type="text/javascript"></script>
 		<!-- END: LAYOUT PLUGINS -->
 		
-		<!-- BEGIN: THEME SCRIPTS 구글지도
+		<!-- BEGIN: THEME SCRIPTS -->
 		<script src="./assets/base/js/components.js" type="text/javascript"></script>
 		<script src="./assets/base/js/components-shop.js" type="text/javascript"></script>
-		-->
 		<script src="./assets/base/js/app.js" type="text/javascript"></script>
 		
 		
-		<!-- 글쓰기 에디터 -->
-		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+		
 		
 		
 		<script>
@@ -305,11 +317,6 @@ Follow: http://www.twitter.com/themehats
     $(document).ready(function () {
       App.init(); // init core 
      
-      $('#summernote').summernote({
-        placeholder: '내용을 입력하세요!',
-        tabsize: 2,
-        height: 400
-      });
       
       //이미지 선택시 미리보기
       $("#input_imgs").on("change", handleImgFileSelect);
@@ -319,15 +326,17 @@ Follow: http://www.twitter.com/themehats
       $('#uploadForm').on('submit', function(e){  
          e.preventDefault();  
          $.ajax({  
-		       url: "portfolio_insert.php",  
+		       url: "pf_insert.php",  
 		       type: "POST",  
 		       data: new FormData(this),  
+		       cache: false,
 		       contentType: false,  
 		       processData:false,  
 		       success: function(data)  
           {  
-	          alert("파일이 업로드되었습니다."); 
-	         	//location.replace('portfolio_admin.php');
+	          alert("업로드 완료."); 
+	          console.log(data);
+	         	//location.replace('pf_admin.php');
 	        }  
          });  
       }); 
@@ -389,10 +398,6 @@ Follow: http://www.twitter.com/themehats
 		<script src="./assets/demos/default/js/scripts/pages/4col-portfolio.js" type="text/javascript"></script>
 		<!-- END: PAGE SCRIPTS -->
 		<!-- END: LAYOUT/BASE/BOTTOM -->
-		
-		
-		<!-- 글쓰기 에디터 -->
-
 		
 		
 	</body>
