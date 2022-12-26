@@ -38,8 +38,8 @@ Follow: http://www.twitter.com/themehats
 					<link href="./assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
 					<!-- END: BASE PLUGINS -->
-					<!-- BEGIN THEME STYLES -->
-					<link href="./assets/demos/default/css/pluGins.css" rel="stylesheet" type="text/css" />
+					<!-- BEGIN THEME STYLES 
+					<link href="./assets/demos/default/css/pluGins.css" rel="stylesheet" type="text/css" />-->
 					<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
 					<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
 					<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
@@ -325,6 +325,7 @@ Follow: http://www.twitter.com/themehats
       //파일 업로드
       $('#uploadForm').on('submit', function(e){  
          e.preventDefault();  
+         
          $.ajax({  
 		       url: "pf_insert.php",  
 		       type: "POST",  
@@ -336,7 +337,7 @@ Follow: http://www.twitter.com/themehats
           {  
 	          alert("업로드 완료."); 
 	          console.log(data);
-	         	//location.replace('pf_admin.php');
+	         	location.replace('pf_admin.php');
 	        }  
          });  
       }); 
@@ -371,7 +372,10 @@ Follow: http://www.twitter.com/themehats
 
           var reader = new FileReader();
           reader.onload = function(e) {
-              var html = "<a href=\"javascript:void(0);\" onclick=\"deleteImageAction("+index+")\" id=\"img_id_"+index+"\"><img src=\"" + e.target.result + "\" data-file='"+f.name+"' class='selProductFile' title='Click to remove'></a>";
+              var html = "<div class=\"wrap_div_img\" id=\"img_id_"+index+"\" style=\"display: inline-block\">" +
+								"<button type=\"button\" class=\"close AClass\" style=\"color:red;\" onclick=\"deleteImageAction("+index+")\"><span><i class=\"fa fa-times-circle\" aria-hidden=\"true\" style=\"margin-left:-10px;\"></i></span></button>"+
+		   						"<img src=\"" + e.target.result + "\" ></a>"+
+								"</div>";
               $(".imgs_wrap").append(html);
               index++;
 

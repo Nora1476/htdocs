@@ -122,7 +122,7 @@ Follow: http://www.twitter.com/themehats
 		            <ul class="nav navbar-nav c-theme-nav">
 
 		              <li class="c-onepage-link ">
-		                <a href="portfolio_admin.php" class="c-link">Portfolio</a>
+		                <a href="pf_admin.php" class="c-link">Portfolio</a>
 		              </li>
 
 		              <li class="c-onepage-link ">
