@@ -149,14 +149,7 @@ Follow: http://www.twitter.com/themehats
 												<input type="text" class="form-control  c-square c-theme" name="p_title" id="p_title" placeholder="제목을 입력하세요.">
 											</div>
 										</div>
-										
-										<div class="form-group">
-											<label for="p_kind" class="col-md-2 control-label">분류</label>
-											<div class="col-md-8">
-												<input type="text" class="form-control  c-square c-theme" name="p_kind" id="p_kind" placeholder="ex) APT ">
-											</div>
-										</div>
-										
+																				
 										<div class="form-group">
 											<label for="p_location" class="col-md-2 control-label">위치</label>
 											<div class="col-md-8">
@@ -171,6 +164,20 @@ Follow: http://www.twitter.com/themehats
 											</div>
 										</div>
 										
+										<div class="form-group">
+											<label for="p_kind" class="col-md-2 control-label">분류</label>
+											<div class="col-md-8">
+												<label class="radio-inline">
+														<input type="radio" name="p_kind" id="p_kind" value="residential" checked /> 주거 
+													</label>
+													<label class="radio-inline">
+														<input type="radio" name="p_kind" id="p_kind" value="commerce"> 상업
+													</label>
+													<label class="radio-inline">
+														<input type="radio" name="p_kind" id="p_kind" value="etc"> 기타
+													</label>
+											</div>
+										</div>
 										
 										<div class="form-group">
 									   	<label for="inputPassword3" class="col-md-2 control-label">내용</label>
@@ -198,7 +205,7 @@ Follow: http://www.twitter.com/themehats
 												<div>
 									        <div class="input_wrap">
 									            <a href="javascript:" onclick="fileUploadAction();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
-									            <input type="file" name="files[]" id="input_imgs" multiple/>
+									            <input type="file" name="files[]" id="input_imgs" multiple />
 									        </div>
 										    </div>
 
@@ -325,11 +332,12 @@ Follow: http://www.twitter.com/themehats
       //파일 업로드
       $('#uploadForm').on('submit', function(e){  
          e.preventDefault();  
+         var data = new FormData(this);
          
          $.ajax({  
 		       url: "pf_insert.php",  
 		       type: "POST",  
-		       data: new FormData(this),  
+		       data: data,  
 		       cache: false,
 		       contentType: false,  
 		       processData:false,  

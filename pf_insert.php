@@ -2,21 +2,18 @@
 
 	
   /* 서버 접속 */
-  $servername = "43.201.87.32";
-  $user = "mulzoo1";
-  $password = "mulzoo@#34";
-  $dbname = "web_1";
-  
-  $connect = mysqli_connect($servername, $user, $password, $dbname);
+  require_once("./dbconfig.php");	
   
    $filtered = array(
-    'title'=>mysqli_real_escape_string($connect, $_POST['p_title']),
-    'kind'=>mysqli_real_escape_string($connect, $_POST['p_kind']),
-		'location'=>mysqli_real_escape_string($connect, $_POST['p_location']),
-		'area'=>mysqli_real_escape_string($connect, $_POST['p_area']),
-		'content'=>mysqli_real_escape_string($connect, $_POST['p_content']),   
-		'open'=>mysqli_real_escape_string($connect, $_POST['p_open']), 
+    'title'=>mysqli_real_escape_string($conn, $_POST['p_title']),
+    'kind'=>mysqli_real_escape_string($conn, $_POST['p_kind']),
+		'location'=>mysqli_real_escape_string($conn, $_POST['p_location']),
+		'area'=>mysqli_real_escape_string($conn, $_POST['p_area']),
+		'content'=>mysqli_real_escape_string($conn, $_POST['p_content']),   
+		'open'=>mysqli_real_escape_string($conn, $_POST['p_open']), 
   );
+  
+  echo  $_POST['p_location'];
 
 	 $sql = "
   INSERT INTO pf_list
@@ -31,7 +28,7 @@
        NOW()
     )";
     
-   $result = mysqli_query($connect, $sql);
+   $result = mysqli_query($conn, $sql);
    
   
  if(is_array($_FILES))   
@@ -57,7 +54,7 @@
         if(move_uploaded_file($sourcePath, $targetPath)) {    //move_uploaded_file($file_path, $destination) 임시경로에 있는 파일을 원하는 경로로 이동
 	      	// 이미지파일 경로 db파일에 업로드
 	      	$sql = "INSERT INTO pf_img (mno, file) VALUES ((SELECT MAX(no) FROM pf_list), '$targetPath' )";
-	      	mysqli_query($connect, $sql);  
+	      	mysqli_query($conn, $sql);  
 	      }                 
       }            
     }    

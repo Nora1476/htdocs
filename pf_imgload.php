@@ -1,24 +1,19 @@
  <?php
  
  /* 서버 접속 */
-  $servername = "43.201.87.32";
-  $user = "mulzoo1";
-  $password = "mulzoo@#34";
-  $dbname = "web_1";
-  
-  $connect = mysqli_connect($servername, $user, $password, $dbname);
+  require_once("./dbconfig.php");	
   
   settype( $_POST['mno'], "integer");
   
  
    $filtered = array(
-		'mno'=>mysqli_real_escape_string($connect, $_POST['mno']),
+		'mno'=>mysqli_real_escape_string($conn, $_POST['mno']),
 		);
   
  
   
   $sql = "select * from pf_img where mno={$filtered['mno']}";
-  $result = mysqli_query($connect,$sql);
+  $result = mysqli_query($conn,$sql);
   
   //echo '<script>';
 	//echo 'console.log("'.$filtered['mno'].'")';

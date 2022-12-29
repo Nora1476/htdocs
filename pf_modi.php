@@ -1,17 +1,7 @@
 <?php
 
-	error_reporting(E_ALL ^ E_DEPRECATED);
-
 	/* 서버 접속 */
-  $servername = "43.201.87.32";
-  $user = "mulzoo1";
-  $password = "mulzoo@#34";
-  $dbname = "web_1";
-  
-  $conn = mysqli_connect($servername, $user, $password, $dbname);
-
-
-	 
+  require_once("./dbconfig.php");		 
 	 
  	
  	settype( $_POST['no'], "integer");
@@ -45,6 +35,7 @@
    
      
    $result = mysqli_query($conn, $sql);
+   echo $result;
    
    
 	//echo 'console.log("'. $filtered['no'].'")';
@@ -75,17 +66,20 @@
 	            	     	
 	     
 	      if(move_uploaded_file($sourcePath, $targetPath)) {    //move_uploaded_file($file_path, $destination) 임시경로에 있는 파일을 원하는 경로로 이동
-	      	// 이미지파일 경로 db파일에 업로드
 	      	
+	      	//전역변수 사용
 	      	global $no;
 	     		
+	     		// 이미지파일 경로 db파일에 업로드
 	      	$sql = "INSERT INTO pf_img (mno, file) VALUES ( '$no', '$targetPath' )";   
-	      	mysqli_query($conn, $sql);  
+	      	$result = mysqli_query($conn, $sql);
 	      	
 	      }               
 	    }            
 	  } 
 	  
  }  
+ 
+ mysqli_close($conn);
  
 ?>

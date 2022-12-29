@@ -76,18 +76,17 @@ Follow: http://www.twitter.com/themehats
 		
 		<!-- BEGIN: LAYOUT/HEADERS/HEADER-ONEPAGE -->
 		<!-- BEGIN: HEADER -->
-		<header
-    class="c-layout-header c-layout-header-onepage c-layout-header-2 c-layout-header-dark-mobile c-header-transparent-dark"
-    id="home" data-minimize-offset="0">
+		<header class="c-layout-header c-layout-header-onepage c-layout-headr c-layout-header-default-mobile"
+    id="home" data-minimize-offset="0" style="background:white;">
 			<div class="c-navbar">
 				<div class="container-fluid">
 					<!-- BEGIN: BRAND -->
 					<div class="c-navbar-wrapper clearfix">
-						<div class="c-brand c-pull-left">
+						<div class="c-brand c-pull">
 							<a href="index.html" class="c-logo">
-								<img src="./assets/base/img/layout/logos/logo-1.png" alt="JANGO" class="c-desktop-logo">
-									<img src="./assets/base/img/layout/logos/logo-1.png" alt="JANGO" class="c-desktop-logo-inverse">
-										<img src="./assets/base/img/layout/logos/logo-1.png" alt="JANGO" class="c-mobile-logo">
+								<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo">
+									<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo-inverse">
+										<img src="./img_main/logo1.png" alt="Gongan" class="c-mobile-logo">
 							</a>
 							
 						</div>
@@ -144,123 +143,20 @@ Follow: http://www.twitter.com/themehats
 						<ul>
 							<!--BEGIN: SLIDE #1 -->
 							<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
-								<img alt="" src="./assets/base/img/content/backgrounds/bg-56.jpg" data-bgposition="center center"
+								<img alt="Gongan" src="./assets/base/img/content/backgrounds/bg-56.jpg" data-bgposition="center center"
                 data-bgfit="cover" data-bgrepeat="no-repeat">
 							</li>
 							<!--END -->
 							<!--BEGIN: SLIDE #2 -->
 							<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
-								<img alt="" src="./assets/base/img/content/backgrounds/bg-57.jpg" data-bgposition="center center"
+								<img alt="Gongan" src="./assets/base/img/content/backgrounds/bg-57.jpg" data-bgposition="center center"
                 data-bgfit="cover" data-bgrepeat="no-repeat">
 							</li>
 							<!--END -->
 						</ul>
 					</div>
 				</div>
-			</section>
-			
-			<section id="contact" style="display:none;">
-				<!-- BEGIN: CONTENT/CONTACT/FEEDBACK-2 -->
-				<div class="c-content-box c-size-md c-no-padding c-bg-img-center">
-					<div class="container">
-						<div class="c-content-feedback-1 c-option-2">
-							<div class="c-content-title-1">
-								<h3 class="c-center c-font-uppercase c-font-bold">Contact</h3>
-								<div class="c-line-center c-theme-bg"></div>
-							</div>
-							<div class="row" style="padding:0;">
-								<div class="col-md-1"></div>
-								<div class="col-md-10">
-									<div class="c-contact">
-										<table id="example" class="display" style="width:100%">
-											<thead>
-												<tr>
-													<th>ID</th>
-													<th>성함</th>
-													<th>연락처</th>
-													<th>현장위치</th>
-													<th>임대차계약</th>
-													<th>유형</th>
-													<th>기타내용</th>
-													<th>문의일자</th>
-													<th>사진</th>
-												</tr>
-											</thead>
-											<tfoot>
-												<tr>
-													<th>ID</th>
-													<th>성함</th>
-													<th>연락처</th>
-													<th>현장위치</th>
-													<th>임대차계약</th>
-													<th>유형</th>
-													<th>기타내용</th>
-													<th>문의일자</th>
-													<th>사진</th>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div>
-								<div class="col-md-1"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- END: CONTENT/CONTACT/FEEDBACK-2 -->
-			</section>
-			
-			<!--Modal-->
-			<div class="modal fade" id="modal" tabindex="-1"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
-									data-backdrop="static" data-keyboard="false">
-				<div class="modal-dialog">
-					<div class="modal-content c-square">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">×</span>&nbsp&nbsp</button>
-							<h4 class="modal-title" id="exampleModalLabel">문의글 확인하기</h4>
-						</div>
-						<div class="modal-body" style="font-size:10px;">
-							<form>
-								<input type="text" class="form-control c-square" id="id" name="id" style="display:none;">
-									<div class="form-group" >
-										<label for="name" class="control-label">성함 ::</label>
-										<input type="text" class="form-control c-square" id="name" name="name">
-									</div>
-									<div class="form-group">
-										<label for="phone" class="control-label">연락처 ::</label>
-										<input type="text" class="form-control c-square" id="phone" name="phone">
-									</div>
-									<div class="form-group">
-										<label for="location" class="control-label">현장위치 ::</label>
-										<input type="text" class="form-control c-square" id="location" name="location">
-									</div>
-									<div class="form-group">
-										<label for="lease_agreement" class="control-label">임대차계약 :: </label>
-										<input type="text" class="form-control c-square" id="lease_agreement" name="lease_agreement">
-									</div>
-									<div class="form-group">
-										<label for="type" class="control-label">유형 ::</label>
-										<input type="text" class="form-control c-square" id="type" name="type">
-									</div>
-									<div class="form-group">
-										<label for="content" class="control-label">기타문의내용 ::</label>
-										<textarea class="form-control  c-square" id="content" name="content"></textarea>
-									</div>
-									<div class="form-group">
-										<label for="created" class="control-label">등록일자 ::</label>
-										<input type="text" class="form-control c-square" id="created" name="created">
-									</div>
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" id="btnModi" class="btn c-theme-btn c-btn-square c-btn-bold c-btn-uppercase" style="margin-right:5px;">Modify</button>
-							<button type="button" id="btnDel" class="btn c-theme-btn c-btn-square c-btn-bold c-btn-uppercase">Delete</button>
-							<button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			</section>	
 			
 			
 		</div>

@@ -4148,7 +4148,8 @@ if (typeof Object.create !== 'function') {
             t.nextButton = $('<div/>', {
                 'class': 'cbp-popup-next',
                 'title': 'Next (Right arrow key)',
-                'data-action': 'next'
+                'data-action': 'next',
+                
             }).appendTo(t.navigation);
 
 

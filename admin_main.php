@@ -1,6 +1,7 @@
 
+
 <!DOCTYPE html>
-<!--
+<!-- 
 Theme: JANGO - Ultimate Multipurpose HTML Theme Built With Twitter Bootstrap 3.3.7
 Version: 2.0.1
 Author: Themehats
@@ -10,69 +11,55 @@ Contact: support@themehats.com
 Follow: http://www.twitter.com/themehats
 -->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]>-->
-
+<!--[if !IE]><!-->
 <html lang="en">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+	<head>
+		<meta charset="utf-8" />
+		<title>공간공작소</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+			<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+				<meta content="" name="description" />
+				<meta content="" name="author" />
+				<!-- BEGIN GLOBAL MANDATORY STYLES -->
+				<link
+				    href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
+				    rel='stylesheet' type='text/css'>
+					<link href="./assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+					<!-- END GLOBAL MANDATORY STYLES -->
+					<!-- BEGIN: BASE PLUGINS  -->
+					<link href="./assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
+					<!-- END: BASE PLUGINS -->
+					<!-- BEGIN THEME STYLES -->
+					<link href="./assets/demos/default/css/plugins.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+					<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
+					<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
+					<!-- END THEME STYLES -->
+					
+					<link rel="shortcut icon" href="favicon.ico" />
+					<link href="./main.css" rel="stylesheet" type="text/css">
+					
+					<!--BEGIN: datatables-->
+					<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+					<link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+					<!--END: datatables-->
 
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
-
-
-
-<head>
-  <meta charset="utf-8" />
-  <title>공간공작소_관리자</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <meta content="" name="description" />
-  <meta content="" name="author" />
-  <!-- BEGIN GLOBAL MANDATORY STYLES -->
-  <link
-    href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
-    rel='stylesheet' type='text/css'>
-  <link href="./assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
-  <!-- END GLOBAL MANDATORY STYLES -->
-
-  <!-- BEGIN: BASE PLUGINS  -->
-  <link href="./assets/plugins/revo-slider/css/settings.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/revo-slider/css/layers.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/revo-slider/css/navigation.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
-  <!-- END: BASE PLUGINS -->
-
-
-  <!-- BEGIN THEME STYLES -->
-  <link href="./assets/demos/default/css/plugins-rtl.css" rel="stylesheet" type="text/css" />
-  <link href="./assets/demos/default/css/components-rtl.css" id="style_components" rel="stylesheet" type="text/css" />
-  <link href="./assets/demos/default/css/themes/default-rtl.css" rel="stylesheet" id="style_theme" type="text/css" />
-  <link href="./assets/demos/default/css/custom-rtl.css" rel="stylesheet" type="text/css" />
-  <!-- END THEME STYLES -->
-
-
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link href="./main.css?after" rel="stylesheet" type="text/css">
-
-
-
-	<!--BEGIN: datatables-->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-
-</head>
-
-<body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen c-layout-header-topbar">
-			
-			<?php
-
+	</head>
+	<body class="c-layout-header-fixed c-layout-header-mobile-fixed">
+		
+		
+		<?php
 			session_start();
 			//print_r($_SESSION);
 
@@ -80,70 +67,59 @@ Follow: http://www.twitter.com/themehats
 			if(!isset($_SESSION['username'])) {
 			   
 				echo "<script>alert('로그인이 필요한 페이지 입니다.')</script>";
-      	echo "<script>location.replace('index_admin.php');</script>";
-      	
-			} 
-
-			?>
-
-
-
-		  <!-- BEGIN: LAYOUT/HEADERS/HEADER-ONEPAGE -->
-		  <!-- BEGIN: HEADER -->
-		  <header
-		    class="c-layout-header c-layout-header-onepage c-layout-header-2 c-layout-header-dark-mobile c-header-transparent-dark"
-		    id="home" data-minimize-offset="0">
-		    <div class="c-navbar">
-		      <div class="container-fluid">
-		        <!-- BEGIN: BRAND -->
-		        <div class="c-navbar-wrapper clearfix">
-		          <div class="c-brand c-pull-left">
-
-		            <a href="index.html" class="c-logo">
-		              <img src="./assets/base/img/layout/logos/logo-1.png" alt="JANGO" class="c-desktop-logo">
-		              <img src="./assets/base/img/layout/logos/logo-1.png" alt="JANGO" class="c-desktop-logo-inverse">
-		              <img src="./assets/base/img/layout/logos/logo-1.png" alt="JANGO" class="c-mobile-logo">
-		            </a>
-		            <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
-		              <span class="c-line"></span>
-		              <span class="c-line"></span>
-		              <span class="c-line"></span>
-		            </button>
-
-		          </div>
-		          <!-- END: BRAND -->
-
-		          <!-- BEGIN: HOR NAV -->
-		          <!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
-		          <!-- BEGIN: MEGA MENU -->
-		          <nav
-		            class="c-mega-menu c-mega-menu-onepage c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold"
-		            data-onepage-animation-speed="700">
-		            <ul class="nav navbar-nav c-theme-nav">
-
-		              <li class="c-onepage-link ">
-		                <a href="pf_admin.php" class="c-link">Portfolio</a>
-		              </li>
-
-		              <li class="c-onepage-link ">
-		                <a href="#contact" class="c-link">Contact</a>
-		              </li>
-
+	    	echo "<script>location.replace('index_admin.php');</script>";
+	    	
+			}
+		
+		?>
+		
+		
+	
+			<header class="c-layout-header c-layout-header-onepage c-layout-header-4 c-layout-header-default-mobile" id="home"
+	    data-minimize-offset="40">
+				<div class="c-navbar">
+					<div class="container-fluid">
+						<!-- BEGIN: BRAND -->
+						<div class="c-navbar-wrapper clearfix">
+							<div class="c-brand c-pull-left">
+								<a href="admin_main.php" class="c-logo">
+									<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo">
+										<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo-inverse">
+											<img src="./img_main/logo1.png" alt="JANGO" class="c-mobile-logo">
+								</a>
+								<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+									<span class="c-line"></span>
+									<span class="c-line"></span>
+									<span class="c-line"></span>
+								</button>
+							</div>
+							<!-- END: BRAND -->
+							<!-- BEGIN: HOR NAV -->
+							<!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
+							<!-- BEGIN: MEGA MENU -->
+							<nav
+	            class="c-mega-menu c-mega-menu-onepage c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold"
+	            data-onepage-animation-speed="700">
+								<ul class="nav navbar-nav c-theme-nav">
+									<li class="c-onepage-link ">
+										<a href="pf_admin.php" class="c-link">Portfolio</a>
+									</li>
+									<li class="c-onepage-link ">
+										<a href="index_admin.php#contact" class="c-link">Contact</a>
+									</li>
 									<li class="c-onepage-link " >
-		                <a href='admin_logout.php' class="c-link">Logout</a>
-		              </li>
-		            </ul>
-		          </nav>
-
-		          <!-- END: MEGA MENU --><!-- END: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
-		          <!-- END: HOR NAV -->
-		        </div>
-		      </div>
-		    </div>
-		  </header>
-		  <!-- END: HEADER --><!-- END: LAYOUT/HEADERS/HEADER-ONEPAGE -->
-
-
+			                <a href='admin_logout.php' class="c-link">Logout</a>
+			              </li>
+								</ul>
+							</nav>
+							<!-- END: MEGA MENU -->
+							<!-- END: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
+							<!-- END: HOR NAV -->
+						</div>
+					</div>
+				</div>
+			</header>
+		
 		  <!-- BEGIN: PAGE CONTAINER -->
 		  <div class="c-layout-page">
 

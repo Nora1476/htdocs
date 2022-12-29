@@ -86,10 +86,10 @@ Follow: http://www.twitter.com/themehats
 					<!-- BEGIN: BRAND -->
 					<div class="c-navbar-wrapper clearfix">
 						<div class="c-brand c-pull-left">
-							<a href="index.html" class="c-logo">
-								<img src="./assets/base/img/layout/logos/logo-3.png" alt="JANGO" class="c-desktop-logo">
-									<img src="./assets/base/img/layout/logos/logo-3.png" alt="JANGO" class="c-desktop-logo-inverse">
-										<img src="./assets/base/img/layout/logos/logo-3.png" alt="JANGO" class="c-mobile-logo">
+							<a href="admin_main.php" class="c-logo">
+								<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo">
+									<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo-inverse">
+										<img src="./img_main/logo1.png" alt="JANGO" class="c-mobile-logo">
 							</a>
 							<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
 								<span class="c-line"></span>
@@ -452,12 +452,13 @@ Follow: http://www.twitter.com/themehats
     	
     
     	
-    	//모달창 오픈
+    	//datatable row 클릭 이벤트
   	  $('#example tbody').on('click', 'tr', function (e) {
 
   	  	e.preventDefault();
+  	  	
 	      var data = table.row(this).data();
-				var id = data[0];
+				id = data[0];  //전역스코프 속성으로 var 없이 변수 설정
 				
 	      //모달창 backdrop, esc키로 창닫기 방지
 	      $("#modal").modal("show").modal({backdrop:'static', keyboard:false}); 
@@ -472,105 +473,91 @@ Follow: http://www.twitter.com/themehats
 					$('#reg_date').val(data[7]);
 	
 					$('#image').load('pf_imgload.php', {'mno':id});
-			
-				
-					
-				//모달창 안에 로드된 개별이미지 클릭(삭제) 이벤트
-	    	$("#modal #image").on('click','img',function(){
-	    		$("#del_chk").modal("show");
-	    		var src = $(this).attr("src");
-	    		var file = src.substr(2);
+	         	    
+    	});
+    	
+    	
+  		//모달창 안에 로드된 개별이미지 클릭(삭제) 이벤트
+    	$("#modal #image").on('click','img',function(){
+    		$("#del_chk").modal("show");
+    		var src = $(this).attr("src");
+    		var file = src.substr(2);
 
-	    		 	    		 
-	    		 
-	    		//개별 이미지 삭제확인 modal
-	    		$("#del_chk").off().on('click', '#del_ok' ,function(e){  //클릭 중복이벤트 방지
-						e.preventDefault();
-						console.log(file);
-
-						$.ajax({
-							url: "pf_del1pic.php",
-							type: "POST",
-							data:{
-								'file': file,
-							},
-							success: function(data){
-								$("#del_chk").modal("hide");
-								alert('삭제되었습니다.');
-							}
-						})
-
-					});
-					
-					//개별 이미지 삭제확인 modal 닫기	    		
-	    		$("#del_chk").on('click', '#modalClose' ,function(e){
-	    			$("#del_chk").modal("hide");
-	    		});
-					
-	    		
-	    	});
-	    	
-	    		    	
-	    	
-
-				
-				//이미지 선택시 미리보기
-     		//$("#input_imgs").on("change", handleImgFileSelect);
-     		$("#modal").off().on('change', '#input_imgs' , handleImgFileSelect);
-     	
-				
-				//Delete 포트폴리오
-				$("#modal").on('click', '#btnDel' ,function(e){
+    		//개별 이미지 삭제확인 modal
+    		$("#del_chk").off('click').on('click', '#del_ok' ,function(e){  //클릭 중복이벤트 방지
 					e.preventDefault();
+					console.log(file);
 
 					$.ajax({
-						url: "pf_del.php",
+						url: "pf_del1pic.php",
 						type: "POST",
 						data:{
-							'no': id,
+							'file': file,  
 						},
 						success: function(data){
-							$("#modal").modal("hide");
-							$('#example').DataTable().ajax.reload();
+							$("#del_chk").modal("hide");
 							alert('삭제되었습니다.');
+							$("#modal").modal("hide");
+    					$('#example').DataTable().ajax.reload();
 						}
 					})
 
 				});
 				
-				
-				// Modify 포트폴리오
-				$("#frm_modi").submit(function( e ) {
+				//개별 이미지 삭제확인 modal 닫기	    		
+    		$("#del_chk").on('click', '#modalClose' ,function(e){
+    			$("#del_chk").modal("hide");	    			
+    		});
 					
-					e.preventDefault();				
-									
-					$.ajax({
-						url: "pf_modi.php",
-						type: "POST",
-						data: new FormData(this),  
-		        cache: false,
-		        contentType: false,  
-		        processData:false,  
-						success: function(data){
-							alert('삭제되었습니다.');
-						}
-				  });
-				  
-				});
-				
-				
-				//modal 닫기 이벤트
-				$("#modal").on('click', '#modalClose' ,function(e){
-					$("#modal").modal("hide");
-				});
-				
-				
-        
     	});
     	
     	
+    	//이미지 선택시 미리보기    		
+			$('#modal').on('change').bind('change', '#input_imgs' , handleImgFileSelect)  
     	
+    	//모달창 닫기
+    	$('#modal').on('click', '#modalClose', function(e){  
+					$("#modal").modal("hide");
+				})	
 
+    	//포트폴리오 삭제
+    	$('#modal').on('click', '#btnDel', function(e){ 
+				e.preventDefault();
+				
+				
+
+				$.ajax({
+					url: "pf_del.php",
+					type: "POST",
+					data:{
+						'no': id,  //#example tbody의 id값 받아서 삭제
+					},
+					success: function(data){
+						$("#modal").modal("hide");
+						$('#example').DataTable().ajax.reload();
+						alert('삭제되었습니다.');
+					}
+				})
+			})
+  	
+  		//포트폴리오 수정		
+    	$('#modal').on('submit', '#frm_modi', function(e) {	
+				e.preventDefault();													
+				$.ajax({
+					url: "pf_modi.php",
+					type: "POST",
+					data: new FormData(this),  
+	        cache: false,
+	        contentType: false,  
+	        processData:false,  
+					success: function(data){
+						alert('수정되었습니다.');
+						$('.imgs_wrap').empty();
+						$("#modal").modal("hide");
+						$('#example').DataTable().ajax.reload();
+					}
+			  });
+			});	   
     	
 
     });

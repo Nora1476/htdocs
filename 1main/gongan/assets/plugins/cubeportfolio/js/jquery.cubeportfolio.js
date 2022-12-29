@@ -4146,7 +4146,7 @@ if (typeof Object.create !== 'function') {
 
             // next
             t.nextButton = $('<div/>', {
-                'class': 'cbp-popup-next',
+                'class': '',
                 'title': 'Next (Right arrow key)',
                 'data-action': 'next'
             }).appendTo(t.navigation);
@@ -4154,7 +4154,7 @@ if (typeof Object.create !== 'function') {
 
             // prev
             t.prevButton = $('<div/>', {
-                'class': 'cbp-popup-prev',
+                'class': '',
                 'title': 'Previous (Left arrow key)',
                 'data-action': 'prev'
             }).appendTo(t.navigation);
