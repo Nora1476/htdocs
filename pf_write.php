@@ -80,9 +80,9 @@ Follow: http://www.twitter.com/themehats
 					<div class="c-navbar-wrapper clearfix">
 						<div class="c-brand c-pull-left">
 							<a href="index.html" class="c-logo">
-								<img src="./assets/base/img/layout/logos/logo-3.png" alt="JANGO" class="c-desktop-logo">
-									<img src="./assets/base/img/layout/logos/logo-3.png" alt="JANGO" class="c-desktop-logo-inverse">
-										<img src="./assets/base/img/layout/logos/logo-3.png" alt="JANGO" class="c-mobile-logo">
+								<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo">
+									<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo-inverse">
+										<img src="./img_main/logo1.png" alt="JANGO" class="c-mobile-logo">
 							</a>
 							<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
 								<span class="c-line"></span>
@@ -180,47 +180,59 @@ Follow: http://www.twitter.com/themehats
 										</div>
 										
 										<div class="form-group">
-									   	<label for="inputPassword3" class="col-md-2 control-label">내용</label>
+									   	<label for="p_content" class="col-md-2 control-label">내용</label>
 									   	<div class="col-md-8">
-									   		<textarea class="form-control  c-square c-theme" name="p_content" rows="10"></textarea>
+									   		<textarea class="form-control  c-square c-theme"  id="p_content" name="p_content" rows="10"></textarea>
 									    </div>
 										</div>
-										
-										<div class="form-group">
-												<label class="col-md-2 control-label">공개여부</label>
-												<div class="col-md-8">
-													<label class="radio-inline">
-														<input type="radio" name="p_open" id="p_open" value="공개" checked> 공개
-													</label>
-													<label class="radio-inline">
-														<input type="radio" name="p_open" id="p_open" value="비공개"> 비공개
-													</label>
-												</div>
-											</div>
 
 										<div class="form-group">
-											<label for="exampleInputFile" class="col-md-2 control-label" >이미지 파일</label>
-											<div class="col-md-8 input_wrap">
-												
-												<div>
+											<label for="" class="col-md-2 control-label" >이미지 <br> 파일첨부</label>
+											<ul class="col-md-8 input_wrap">		
+												<li style="list-style:none;">
 									        <div class="input_wrap">
-									            <a href="javascript:" onclick="fileUploadAction();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
-									            <input type="file" name="files[]" id="input_imgs" multiple />
+								            <a href="javascript:" onclick="fileUploadAction();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
+								            <input type="file" name="files[]" id="input_imgs" multiple />
+								            <input type="text" name="seq" id="seq" value=1 multiple style="display:none;"/>
 									        </div>
-										    </div>
-
-										    <div>
-									        <div class="imgs_wrap">
-									            <img id="img" />
+									        
+									        <h5 style="font-size:small;"><b>공사후 사진 미리보기</b></h5>
+									        <div class="imgs_wrap" style="margin-top:-5px;">
+									        	<img id="img" />
+									        </div>     
+								        </li>
+								        
+								        <li style="list-style:none;">
+									        <div class="input_wrap2">
+								            <a href="javascript:" onclick="fileUploadAction2();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
+								            <input type="file" name="files[]" id="input_imgs2" multiple />
+								            <input type="text" name="seq" id="seq" value=2 multiple style="display:none;"/>
 									        </div>
-									        <h5><b>이미지 미리보기</b></h5>
-										    </div>
-
-											</div>    
+									        
+									        <h5 style="font-size:small;"><b>공사전 사진 미리보기</b></h5>
+									        <div class="imgs_wrap2" style="margin-top:-5px;">
+									        	<img id="img" />
+									        </div>     
+								        </li>
+								        
+								        <li style="list-style:none ;">
+									        <div class="input_wrap3">
+								            <a href="javascript:" onclick="fileUploadAction3();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
+								            <input type="file" name="files[]" id="input_imgs3" multiple />
+								            <input type="text" name="seq" id="seq" value=3 multiple style="display:none;"/>
+									        </div>
+									        
+									        <h5 style="font-size:small;"><b>평면도 사진 미리보기</b></h5>
+									        <div class="imgs_wrap3" style="margin-top:-5px;">
+									        	<img id="img" />
+									        </div>     
+								        </li>
+									    </ul> 
+									    
+									      
 										</div>
 										
-										
-										
+																			
 										<div class="form-group c-margin-t-40">
 											<div class="col-sm-offset-5 col-md-8">
 												<button type="submit" class="btn c-btn-dark-2 c-btn-uppercase c-btn-bold c-btn-square">등록하기</button>												
@@ -255,21 +267,23 @@ Follow: http://www.twitter.com/themehats
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon-social-facebook"></i>
+								<a href="https://www.instagram.com/gonggan_workshop/" target=”_blank” >
+									<i class="fa fa-instagram"></i>
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon-social-twitter"></i>
+								<a href="https://blog.naver.com/spaceworkshop" target=”_blank” > 
+									<img id="naver" src="./img_main/naver.png" alt="" >
 								</a>
 							</li>
 						</ul>
 						<ul class="c-address">
 							<li>
-								<i class="icon-call-end c-theme-font"></i> TEL. 051-583-0144 | FAX. 051-703-2994 </li>
+								<i class="icon-call-end c-theme-font"></i> TEL. 051-583-0144 | FAX. 051-703-2994
+							</li>
 							<li>
-								<i class="icon-pointer c-theme-font"></i> 대표 이 동 준 | 사업자등록번호 889-81-02623 | 부산광역시 영도구 조내기로 5번길 23, 4층</li>
+								<i class="icon-pointer c-theme-font"></i> 대표 이 동 준 | 사업자등록번호 889-81-02623 | 부산광역시 영도구 조내기로 5번길 23, 4층
+							</li>
 						</ul>
 						<p class="c-copyright c-font-grey">2022 &copy; 공간공작소
 							<span class="c-font-grey-3">All Rights Reserved.</span>
@@ -323,16 +337,58 @@ Follow: http://www.twitter.com/themehats
 			
     $(document).ready(function () {
       App.init(); // init core 
+    
+      $("#naver").hover(
+					function () { // mouseover
+						$(this).attr("src","./img_main/naver2.png");
+					},function () { // mouseover
+						$(this).attr("src","./img_main/naver.png");
+					}
+				);
      
       
       //이미지 선택시 미리보기
       $("#input_imgs").on("change", handleImgFileSelect);
+      $("#input_imgs2").on("change", handleImgFileSelect2);
+      $("#input_imgs3").on("change", handleImgFileSelect3);
         
         
       //파일 업로드
       $('#uploadForm').on('submit', function(e){  
          e.preventDefault();  
          var data = new FormData(this);
+         
+         	//유효성 검사
+				if ($("#p_title").val() == "") {
+					alert("제목을 입력해 주세요.");
+					$("#p_title").focus();
+					return false;
+				}
+
+				if ($("#p_location").val() == "") {
+					alert("위치를 입력해 주세요.");
+					$("#p_location").focus();
+					return false;
+				}
+
+				if ($("#p_area").val() == "") {
+					alert("평수를 입력해 주세요.");
+					$("#p_area").focus();
+					return false;
+				}
+				
+				if ($("#p_content").val() == "") {
+					alert("내용를 입력해 주세요.");
+					$("#p_content").focus();
+					return false;
+				}
+
+				if ($(':radio[name="p_kind"]:checked').length <
+					1) {
+					alert("분류를 선택해주세요.");
+					return false;
+				}
+
          
          $.ajax({  
 		       url: "pf_insert.php",  
@@ -343,7 +399,7 @@ Follow: http://www.twitter.com/themehats
 		       processData:false,  
 		       success: function(data)  
           {  
-	          alert("업로드 완료."); 
+	          alert("업로드 완료되었습니다."); 
 	          console.log(data);
 	         	location.replace('pf_admin.php');
 	        }  
@@ -354,12 +410,10 @@ Follow: http://www.twitter.com/themehats
           
     });
     
-    
+    //공사후 이미지 미리보기 함수
     function fileUploadAction() {
-      //console.log("fileUploadAction");
       $("#input_imgs").trigger('click');
     }
-
     function handleImgFileSelect(e) {
 
       // 이미지 정보들을 초기화
@@ -392,7 +446,82 @@ Follow: http://www.twitter.com/themehats
           
       });
     }
+    
+    //공사전 이미지 미리보기 함수
+    function fileUploadAction2() {
+      $("#input_imgs2").trigger('click');
+    }
+     function handleImgFileSelect2(e) {
 
+      // 이미지 정보들을 초기화
+      sel_files = [];
+      $(".imgs_wrap2").empty();
+
+      var files = e.target.files;
+      var filesArr = Array.prototype.slice.call(files);  //새로운 Array를 변환하기 위하여 Function.prototype.call()으로 바인딩(주어진 this값 및 전달된 인수와 함께 호출)
+
+      var index = 0;
+      filesArr.forEach(function(f) {
+          if(!f.type.match("image.*")) {
+              alert("확장자는 이미지 확장자만 가능합니다.");
+              return;
+          }
+
+          sel_files.push(f); //이미지 정보 배열에 추가
+
+          var reader = new FileReader();
+          reader.onload = function(e) {
+              var html = "<div class=\"wrap_div_img\" id=\"img_id_"+index+"\" style=\"display: inline-block\">" +
+								"<button type=\"button\" class=\"close AClass\" style=\"color:red;\" onclick=\"deleteImageAction("+index+")\"><span><i class=\"fa fa-times-circle\" aria-hidden=\"true\" style=\"margin-left:-10px;\"></i></span></button>"+
+		   						"<img src=\"" + e.target.result + "\" ></a>"+
+								"</div>";
+              $(".imgs_wrap2").append(html);
+              index++;
+
+          }
+          reader.readAsDataURL(f);
+          
+      });
+    }
+    
+    //평면도 이미지 미리보기 함수
+    function fileUploadAction3() {
+      $("#input_imgs3").trigger('click');
+    }
+     function handleImgFileSelect3(e) {
+
+      // 이미지 정보들을 초기화
+      sel_files = [];
+      $(".imgs_wrap3").empty();
+
+      var files = e.target.files;
+      var filesArr = Array.prototype.slice.call(files);  //새로운 Array를 변환하기 위하여 Function.prototype.call()으로 바인딩(주어진 this값 및 전달된 인수와 함께 호출)
+
+      var index = 0;
+      filesArr.forEach(function(f) {
+          if(!f.type.match("image.*")) {
+              alert("확장자는 이미지 확장자만 가능합니다.");
+              return;
+          }
+
+          sel_files.push(f); //이미지 정보 배열에 추가
+
+          var reader = new FileReader();
+          reader.onload = function(e) {
+              var html = "<div class=\"wrap_div_img\" id=\"img_id_"+index+"\" style=\"display: inline-block\">" +
+								"<button type=\"button\" class=\"close AClass\" style=\"color:red;\" onclick=\"deleteImageAction("+index+")\"><span><i class=\"fa fa-times-circle\" aria-hidden=\"true\" style=\"margin-left:-10px;\"></i></span></button>"+
+		   						"<img src=\"" + e.target.result + "\" ></a>"+
+								"</div>";
+              $(".imgs_wrap3").append(html);
+              index++;
+
+          }
+          reader.readAsDataURL(f);
+          
+      });
+    }
+
+		//미리보기 이미지 삭제
     function deleteImageAction(index) {
       console.log("index : "+index);
       console.log("sel length : "+sel_files.length);
@@ -415,23 +544,29 @@ Follow: http://www.twitter.com/themehats
 	</body>
 	
 	<style>
+		
   .ck-editor__editable { height: 400px; }
   .ck-content { font-size: 12px; }
   input[type=file] {
       display: none;
   }
 
-  .imgs_wrap {
-      border: 2px solid #A8A8A8;
+  .imgs_wrap, .imgs_wrap2, .imgs_wrap3  {
+      border: 1px solid #A8A8A8;
       margin-top: 20px;
       padding: 5px;
   }
-  .imgs_wrap img {
+  .imgs_wrap img, .imgs_wrap2 img, .imgs_wrap3 img {
       max-width: 150px;
       max-height: 100px;
       margin: 5px;
-
   }
+  
+  ul li{
+  	margin-top:10px;
+  }
+  
+  
 	</style>
 	
 </html>

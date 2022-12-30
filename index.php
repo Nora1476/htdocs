@@ -48,6 +48,12 @@ Follow: http://www.twitter.com/themehats
 	<!-- END THEME STYLES -->
 	<link href="./main.css?after" rel="stylesheet" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico" />
+	
+	<!-- 구글폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+	<link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed">
@@ -169,28 +175,22 @@ Follow: http://www.twitter.com/themehats
 									<img src="./img_main/about.png" alt="main_img1" />
 								</div>
 							</div>
-							<div class="col-md-8">
-								<div class="c-body">
-									<ul class="c-row">
-										<li class="wow animate fadeInUp">
-											<h4>Code Quality</h4>
-											<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod</p>
-										</li>
-										<li class="wow animate fadeInUp">
-											<h4>Angular JS Support</h4>
-											<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod</p>
-										</li>
-									</ul>
-									<ul class="c-row">
-										<li class="wow animate fadeInUp">
-											<h4>Every Growing Unique Layouts</h4>
-											<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod</p>
-										</li>
-										<li class="wow animate fadeInUp">
-											<h4>Fully Mobile Optimized</h4>
-											<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod</p>
-										</li>
-									</ul>
+							<div class="col-md-8 c-center wow animate slideInUp">
+								<div class="c-body" >
+									<div class="c-row">
+										<div style="margin:40px; margin-top:20px; line-height:40px;">
+											<p>우리가 디자인하는 모든 것이 사람들의 삶에 영감을 준다는 생각으로<br> 디자인에 임할 것입니다.</p>
+										</div>
+									</div>
+									<div class="c-content-divider c-divider-sm c-right c-theme-bg">
+										<i class="icon-dot c-theme-bg"></i>
+									</div>
+									<div class="c-row" style="margin:30px; line-height:40px;">
+										<p>디자이너들의 <b>실험정신</b>으로 보이는 것 들에만 표현하는 것이 아니라 <br>
+											보이지 않는 것들을 이끌어 낸 <b>창조적인 디자인</b>을 함으로써, <br>
+											공간의 미적인 즐거움과 사용하는 즐거움을 동시에 느낄 수 있는<br>
+											디자인을 행 할것입니다.</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -206,7 +206,7 @@ Follow: http://www.twitter.com/themehats
 					<div class="c-content-title-1">
 						<h3 class="c-center c-font-uppercase c-font-bold">Latest Portfolio</h3>
 						<div class="c-line-center c-theme-bg"></div>
-						<p class="c-center c-font-uppercase">Showcasing your latest designs, sketches, photographs or videos.</p>
+						<p class="c-center c-font-uppercase">건축 / 인테리어 / 브랜드 마케팅 / 홈 스타일링 / 가구 / 전시</p>
 					</div>
 					<div class="cbp-panel">
 						<!-- SEE: components.js:ContentCubeLatestPortfolio -->
@@ -418,7 +418,7 @@ Follow: http://www.twitter.com/themehats
 						<div class="c-content-title-1">
 							<h3 class="c-center c-font-uppercase c-font-bold">Customer Reviews</h3>
 							<div class="c-line-center c-theme-bg"></div>
-							<p class="c-center c-font-uppercase1">Lorem ipsum dolor sit amet et consectetuer adipiscing elit</p>
+
 						</div>
 						<div class="owl-carousel owl-theme c-theme c-owl-nav-center" data-items="3" data-slide-speed="8000" data-rtl="false">
 							<div class="item">
@@ -461,36 +461,6 @@ Follow: http://www.twitter.com/themehats
 										<img src="./assets/base/img/content/avatars/team4.jpg" class="img-responsive">
 										<div class="c-person-detail c-font-uppercase">
 											<h4 class="c-name">Nina Kunis</h4>
-											<p class="c-position c-font-bold c-theme-font">CFO, ERA Tech</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="c-content-testimonial-3 c-option-light">
-									<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-									</div>
-									<div class="c-person">
-										<img src="./assets/base/img/content/avatars/team8.jpg" class="img-responsive">
-										<div class="c-person-detail c-font-uppercase">
-											<h4 class="c-name">Ashley Benson</h4>
-											<p class="c-position c-font-bold c-theme-font">CFO, Loop Inc</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="c-content-testimonial-3 c-option-light">
-									<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-									</div>
-									<div class="c-person">
-										<img src="./assets/base/img/content/avatars/team7.jpg" class="img-responsive">
-										<div class="c-person-detail c-font-uppercase">
-											<h4 class="c-name">Mark Jeep</h4>
 											<p class="c-position c-font-bold c-theme-font">CFO, ERA Tech</p>
 										</div>
 									</div>
@@ -541,13 +511,13 @@ Follow: http://www.twitter.com/themehats
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<i class="icon-social-facebook"></i>
+							<a href="https://www.instagram.com/gonggan_workshop/" target=”_blank” >
+								<i class="fa fa-instagram"></i>
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<i class="icon-social-twitter"></i>
+							<a href="https://blog.naver.com/spaceworkshop" target=”_blank” > 
+								<img id="naver" src="./img_main/naver.png" alt="" style="margin-top:-5px;">
 							</a>
 						</li>
 					</ul>
@@ -609,6 +579,15 @@ Follow: http://www.twitter.com/themehats
 	<script>
 		$(document).ready(function() {
 			App.init(); // init core  
+			
+				$("#naver").hover(
+					function () { // mouseover
+						$(this).attr("src","./img_main/naver2.png");
+					},function () { // mouseover
+						$(this).attr("src","./img_main/naver.png");
+					}
+				);
+					
 
 			$("#contactFrm").submit(function(e) {
 				e.preventDefault();
@@ -640,6 +619,12 @@ Follow: http://www.twitter.com/themehats
 
 				if ($(':radio[name="type"]:checked').length < 1) {
 					alert("유형을 선택해주세요.");
+					return false;
+				}
+				
+				if ($("#content").val() == "") {
+					alert("문의내용을 입력해 주세요.");
+					$("#content").focus();
 					return false;
 				}
 
@@ -718,5 +703,7 @@ Follow: http://www.twitter.com/themehats
 	<!-- END: PAGE SCRIPTS -->
 	<!-- END: LAYOUT/BASE/BOTTOM -->
 </body>
+
+
 
 </html>

@@ -69,6 +69,12 @@ Follow: http://www.twitter.com/themehats
 	<!-- END THEME STYLES -->
 	<link href="./main.css?after" rel="stylesheet" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico" />
+	
+	<!-- 구글폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+	<link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
 
 	
 </head>
@@ -235,13 +241,13 @@ Follow: http://www.twitter.com/themehats
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<i class="icon-social-facebook"></i>
+							<a href="https://www.instagram.com/gonggan_workshop/" target=”_blank” >
+								<i class="fa fa-instagram"></i>
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<i class="icon-social-twitter"></i>
+							<a href="https://blog.naver.com/spaceworkshop" target=”_blank” > 
+								<img id="naver" src="./img_main/naver.png" alt="" >
 							</a>
 						</li>
 					</ul>
@@ -305,6 +311,13 @@ Follow: http://www.twitter.com/themehats
 	<script>
 		$(document).ready(function() {
 			App.init(); // init core  
+		  $("#naver").hover(
+				function () { // mouseover
+					$(this).attr("src","./img_main/naver2.png");
+				},function () { // mouseover
+					$(this).attr("src","./img_main/naver.png");
+				}
+			);
 		})
 	</script>
 	<!-- END: THEME SCRIPTS -->

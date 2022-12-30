@@ -175,21 +175,23 @@ Follow: http://www.twitter.com/themehats
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon-social-facebook"></i>
+								<a href="https://www.instagram.com/gonggan_workshop/" target=”_blank” >
+									<i class="fa fa-instagram"></i>
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon-social-twitter"></i>
+								<a href="https://blog.naver.com/spaceworkshop" target=”_blank” > 
+									<img id="naver" src="./img_main/naver.png" alt="" >
 								</a>
 							</li>
 						</ul>
 						<ul class="c-address">
 							<li>
-								<i class="icon-call-end c-theme-font"></i> TEL. 051-583-0144 | FAX. 051-703-2994 </li>
+								<i class="icon-call-end c-theme-font"></i> TEL. 051-583-0144 | FAX. 051-703-2994
+							</li>
 							<li>
-								<i class="icon-pointer c-theme-font"></i> 대표 이 동 준 | 사업자등록번호 889-81-02623 | 부산광역시 영도구 조내기로 5번길 23, 4층</li>
+								<i class="icon-pointer c-theme-font"></i> 대표 이 동 준 | 사업자등록번호 889-81-02623 | 부산광역시 영도구 조내기로 5번길 23, 4층
+							</li>
 						</ul>
 						<p class="c-copyright c-font-grey">2022 &copy; 공간공작소
 							<span class="c-font-grey-3">All Rights Reserved.</span>
@@ -250,7 +252,13 @@ Follow: http://www.twitter.com/themehats
     $(document).ready(function () {
       App.init(); // init 
       
-      
+      $("#naver").hover(
+					function () { // mouseover
+						$(this).attr("src","./img_main/naver2.png");
+					},function () { // mouseover
+						$(this).attr("src","./img_main/naver.png");
+					}
+				);
      
     	//모달창 오픈
   	  $('#example tbody').on('click', 'tr', function (e) {

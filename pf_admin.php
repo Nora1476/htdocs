@@ -142,7 +142,7 @@ Follow: http://www.twitter.com/themehats
 					<div class="cbp-l-filters-button" style="display:flex; flex-direction: row-reverse;">
 						<div>
 							<a href="pf_write.php">
-								<button class="btn c-btn-dark-2 c-btn-uppercase c-btn-bold c-btn-square" style="margin-right:10px;">Register</button>
+								<button class="btn c-btn-dark-2 c-btn-uppercase c-btn-bold c-btn-square" style="margin-right:10px;">등록하기</button>
 							</a>
 						</div>
 					</div>
@@ -279,7 +279,7 @@ Follow: http://www.twitter.com/themehats
 												<label class="col-md-2 control-label">공개여부</label>
 												<div class="col-md-8">
 													<label class="radio-inline">
-														<input type="radio" name="p_open" id="p_open" value="공개" checked> 공개
+														<input type="radio" name="p_open" id="p_open" value="공개" checked > 공개
 													</label>
 													<label class="radio-inline">
 														<input type="radio" name="p_open" id="p_open" value="비공개"> 비공개
@@ -356,21 +356,23 @@ Follow: http://www.twitter.com/themehats
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon-social-facebook"></i>
+								<a href="https://www.instagram.com/gonggan_workshop/" target=”_blank” >
+									<i class="fa fa-instagram"></i>
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon-social-twitter"></i>
+								<a href="https://blog.naver.com/spaceworkshop" target=”_blank” > 
+									<img id="naver" src="./img_main/naver.png" alt="" >
 								</a>
 							</li>
 						</ul>
 						<ul class="c-address">
 							<li>
-								<i class="icon-call-end c-theme-font"></i> TEL. 051-583-0144 | FAX. 051-703-2994 </li>
+								<i class="icon-call-end c-theme-font"></i> TEL. 051-583-0144 | FAX. 051-703-2994
+							</li>
 							<li>
-								<i class="icon-pointer c-theme-font"></i> 대표 이 동 준 | 사업자등록번호 889-81-02623 | 부산광역시 영도구 조내기로 5번길 23, 4층</li>
+								<i class="icon-pointer c-theme-font"></i> 대표 이 동 준 | 사업자등록번호 889-81-02623 | 부산광역시 영도구 조내기로 5번길 23, 4층
+							</li>
 						</ul>
 						<p class="c-copyright c-font-grey">2022 &copy; 공간공작소
 							<span class="c-font-grey-3">All Rights Reserved.</span>
@@ -422,7 +424,15 @@ Follow: http://www.twitter.com/themehats
 		 var sel_files = [];	     
 		
     $(document).ready(function () {
-      App.init(); // init core 
+      App.init(); // init core
+      
+      $("#naver").hover(
+				function () { // mouseover
+					$(this).attr("src","./img_main/naver2.png");
+				},function () { // mouseover
+					$(this).attr("src","./img_main/naver.png");
+				}
+			); 
       
        //dataTable 게시판
       var table = $('#example').DataTable({

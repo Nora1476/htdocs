@@ -33,34 +33,42 @@ Follow: http://www.twitter.com/themehats
 		<title>공간공작소</title>
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-			<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-			<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-				<meta content="" name="description" />
-				<meta content="" name="author" />
-				<!-- BEGIN GLOBAL MANDATORY STYLES 
-				<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
-    rel='stylesheet' type='text/css'>-->
-					<link href="./assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-					<!-- END GLOBAL MANDATORY STYLES -->
-					<!-- BEGIN: BASE PLUGINS  -->
-					<link href="./assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
-					<!-- END: BASE PLUGINS -->
-					<!-- BEGIN THEME STYLES -->
-					<link href="./assets/demos/default/css/plugins.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
-					<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
-					<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
-					<!-- END THEME STYLES -->
-					<link rel="shortcut icon" href="favicon.ico" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- BEGIN GLOBAL MANDATORY STYLES 
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
+					rel='stylesheet' type='text/css'>-->
+		<link href="./assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<!-- END GLOBAL MANDATORY STYLES -->
+		<!-- BEGIN: BASE PLUGINS  -->
+		<link href="./assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
+		<!-- END: BASE PLUGINS -->
+		<!-- BEGIN THEME STYLES -->
+		<link href="./assets/demos/default/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+		<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
+		<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
+		<!-- END THEME STYLES -->
+		<link rel="shortcut icon" href="favicon.ico" />
+					
+		<!-- 구글폰트 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+		<link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
+	
 	</head>
+	
 	<body class="c-layout-header-fixed c-layout-header-mobile-fixed">
 				
 
@@ -77,8 +85,8 @@ Follow: http://www.twitter.com/themehats
 						<div class="c-brand c-pull-left">
 							<a href="index.html" class="c-logo">
 								<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo">
-									<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo-inverse">
-										<img src="./img_main/logo1.png" alt="Gongan" class="c-mobile-logo">
+								<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo-inverse">
+								<img src="./img_main/logo1.png" alt="Gongan" class="c-mobile-logo">
 							</a>
 							<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
 								<span class="c-line"></span>
@@ -407,7 +415,6 @@ Follow: http://www.twitter.com/themehats
 		</div>
 		<!-- END: PAGE CONTAINER -->
 		<!-- BEGIN: LAYOUT/FOOTERS/FOOTER-5 -->
-		<a name="footer"></a>
 		<footer class="c-layout-footer c-layout-footer-3 c-bg-dark">
 			<div class="c-prefooter">
 				<div class="container">
@@ -419,21 +426,23 @@ Follow: http://www.twitter.com/themehats
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon-social-facebook"></i>
+								<a href="https://www.instagram.com/gonggan_workshop/" target=”_blank” >
+									<i class="fa fa-instagram"></i>
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									<i class="icon-social-twitter"></i>
+								<a href="https://blog.naver.com/spaceworkshop" target=”_blank” > 
+									<img id="naver" src="./img_main/naver.png" alt="" >
 								</a>
 							</li>
 						</ul>
 						<ul class="c-address">
 							<li>
-								<i class="icon-call-end c-theme-font"></i> TEL. 051-583-0144 | FAX. 051-703-2994 </li>
+								<i class="icon-call-end c-theme-font"></i> TEL. 051-583-0144 | FAX. 051-703-2994
+							</li>
 							<li>
-								<i class="icon-pointer c-theme-font"></i> 대표 이 동 준 | 사업자등록번호 889-81-02623 | 부산광역시 영도구 조내기로 5번길 23, 4층</li>
+								<i class="icon-pointer c-theme-font"></i> 대표 이 동 준 | 사업자등록번호 889-81-02623 | 부산광역시 영도구 조내기로 5번길 23, 4층
+							</li>
 						</ul>
 						<p class="c-copyright c-font-grey">2022 &copy; 공간공작소
 							<span class="c-font-grey-3">All Rights Reserved.</span>
@@ -476,7 +485,14 @@ Follow: http://www.twitter.com/themehats
 		<script src="./assets/base/js/app.js" type="text/javascript"></script>
 		<script>
     $(document).ready(function () {
-      App.init(); // init core          
+      App.init(); // init core 
+      $("#naver").hover(
+					function () { // mouseover
+						$(this).attr("src","./img_main/naver2.png");
+					},function () { // mouseover
+						$(this).attr("src","./img_main/naver.png");
+					}
+				);         
     });
 		</script>
 		<!-- END: THEME SCRIPTS -->
@@ -485,4 +501,6 @@ Follow: http://www.twitter.com/themehats
 		<!-- END: PAGE SCRIPTS -->
 		<!-- END: LAYOUT/BASE/BOTTOM -->
 	</body>
+	
+
 </html>
