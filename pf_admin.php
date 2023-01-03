@@ -106,10 +106,10 @@ Follow: http://www.twitter.com/themehats
             data-onepage-animation-speed="700">
 							<ul class="nav navbar-nav c-theme-nav">
 								<li class="c-onepage-link ">
-									<a href="#" class="c-link">Portfolio</a>
+									<a href="index_admin.php#contact" class="c-link">Contact</a>
 								</li>
 								<li class="c-onepage-link ">
-									<a href="index_admin.php#contact" class="c-link">Contact</a>
+									<a href="pf_admin.php" class="c-link">Portfolio</a>
 								</li>
 								<li class="c-onepage-link " >
 		                <a href='admin_logout.php' class="c-link">Logout</a>
@@ -190,7 +190,7 @@ Follow: http://www.twitter.com/themehats
 					<div class="modal-content c-square">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span id="modalClose" aria-hidden="true">×</span></button>
-							<h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+							<h4 class="modal-title" id="myLargeModalLabel">포트폴리오 수정 및 삭제</h4>
 						</div>
 						<div class="modal-body">
 								
@@ -255,27 +255,41 @@ Follow: http://www.twitter.com/themehats
 											</div>
 											
 											<div class="form-group">
-												<label for="exampleInputFile" class="col-md-2 control-label" >이미지 <br>파일추가</label>
-												<div class="col-md-8 input_wrap">
-													
-													<div>
-										        <div class="input_wrap">
-										            <a href="javascript:" onclick="fileUploadAction();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
-										            <input type="file" name="files[]" id="input_imgs" multiple/>
-										        </div>
-											    </div>
-
-											    <div>
-										        <div class="imgs_wrap">
-										            <img id="img" />
-										        </div>
-										        <h5><b>이미지 미리보기</b></h5>
-											    </div>
-
-												</div>    
+												<label for="" class="col-md-2 control-label">이미지파일 <br>업로드</label>
+												<ul class="col-md-8 pre_imglist">		
+													<li>
+														<div class="filebox clearfix">
+														    <div class="inputFile">
+													        <label for="AddImgs" class="addImgBtn">공사후 </label>
+													        <input type="file" name="files[]" id="AddImgs"  accept=".jpg, .png, .gif" multiple /><!-- style="display:none;"-->
+														    </div>
+														    <ul id="Preview" class="sortable"></ul> 
+														</div>										    
+									        </li>
+									        
+									        <li>
+														<div class="filebox clearfix">
+														    <div class="inputFile">
+													        <label for="AddImgs2" class="addImgBtn">공사전 </label>
+													        <input type="file" name="files2[]" id="AddImgs2"  accept=".jpg, .png, .gif" multiple />
+														    </div>
+														    <ul id="Preview2" class="sortable"></ul> 
+														</div>										    
+									        </li>
+									        
+									        <li>
+														<div class="filebox clearfix">
+														    <div class="inputFile">
+													        <label for="AddImgs3" class="addImgBtn">평면도 </label>
+													        <input type="file" name="files3[]" id="AddImgs3"  accept=".jpg, .png, .gif" multiple />
+														    </div>
+														    <ul id="Preview3" class="sortable"></ul> 
+														</div>										    
+									        </li> 
+										    </ul>     
 											</div>
 											
-											<div class="form-group">
+											<div class="form-group" style="display:none;">
 												<label class="col-md-2 control-label">공개여부</label>
 												<div class="col-md-8">
 													<label class="radio-inline">
@@ -418,10 +432,12 @@ Follow: http://www.twitter.com/themehats
 		<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 		<!--END: datatables-->
 		
+		<!-- sortable 드래그앤드롭-->
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" ></script>
+		
 		<script>
 		
-		// 미리보기 이미지 정보들을 담을 배열
-		 var sel_files = [];	     
+		// 미리보기 이미지 정보들을 담을 배열     
 		
     $(document).ready(function () {
       App.init(); // init core
@@ -521,14 +537,12 @@ Follow: http://www.twitter.com/themehats
 					
     	});
     	
-    	
-    	//이미지 선택시 미리보기    		
-			$('#modal').on('change').bind('change', '#input_imgs' , handleImgFileSelect)  
-    	
+    	  	
     	//모달창 닫기
     	$('#modal').on('click', '#modalClose', function(e){  
 					$("#modal").modal("hide");
 				})	
+
 
     	//포트폴리오 삭제
     	$('#modal').on('click', '#btnDel', function(e){ 
@@ -548,8 +562,139 @@ Follow: http://www.twitter.com/themehats
 						alert('삭제되었습니다.');
 					}
 				})
-			})
+			});
   	
+  	
+  		//드래그 앤 드롭
+		  $(".sortable").sortable();
+		  
+		  //이미지 등록
+		  $("#AddImgs").change(function(e){
+		      //div 내용 비워주기
+		      $('#Preview').empty();
+
+		      var files = e.target.files;
+		      var arr = Array.prototype.slice.call(files);
+
+		      preview(arr);
+
+		      function preview(arr){
+	          arr.forEach(function(f){
+
+              //div에 이미지 추가
+              var str = '<li class="ui-state-default">';
+              //str += '<span>'+fileName+'</span><br>';
+
+              //이미지 파일 미리보기
+              if(f.type.match('image.*')){
+                //파일을 읽기 위한 FileReader객체 생성
+                var reader = new FileReader(); 
+                reader.onload = function (e) { 
+                  //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
+                  str += '<img src="'+e.target.result+'" title="'+f.name+'" id="'+f.lastModified+'"  width=80 height=80>';
+                  str += '<span class="delBtn" data-index="'+f.lastModified+'"> x </span>';
+                  str += '</li>';
+                  $(str).appendTo('#Preview');
+                } 
+                reader.readAsDataURL(f);
+              }
+	          })
+		      }
+		  });
+		  $("#AddImgs2").change(function(e){
+	      //div 내용 비워주기
+	      $('#Preview2').empty();
+
+	      var files = e.target.files;
+	      var arr = Array.prototype.slice.call(files);
+
+	      preview(arr);
+
+	      function preview(arr){
+          arr.forEach(function(f){
+              
+            //div에 이미지 추가
+            var str = '<li class="ui-state-default">';
+            //str += '<span>'+fileName+'</span><br>';
+
+            //이미지 파일 미리보기
+            if(f.type.match('image.*')){
+              //파일을 읽기 위한 FileReader객체 생성
+              var reader = new FileReader(); 
+              reader.onload = function (e) { 
+                //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
+                str += '<img src="'+e.target.result+'" title="'+f.name+'" id="'+f.lastModified+'"  width=80 height=80>';
+                str += '<span class="delBtn" data-index="'+f.lastModified+'"> x </span>';
+                str += '</li>';
+                $(str).appendTo('#Preview2');
+              } 
+              reader.readAsDataURL(f);
+            }
+          })
+	      }
+		  });
+		  $("#AddImgs3").change(function(e){
+	      //div 내용 비워주기
+	      $('#Preview3').empty();
+
+	      var files = e.target.files;
+	      var arr = Array.prototype.slice.call(files);
+
+	      preview(arr);
+
+	      function preview(arr){
+          arr.forEach(function(f){
+
+            //div에 이미지 추가
+            var str = '<li class="ui-state-default">';
+            //str += '<span>'+fileName+'</span><br>';
+
+            //이미지 파일 미리보기
+            if(f.type.match('image.*')){
+              //파일을 읽기 위한 FileReader객체 생성
+              var reader = new FileReader(); 
+              reader.onload = function (e) { 
+                //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
+                str += '<img src="'+e.target.result+'" title="'+f.name+'" id="'+f.lastModified+'"  width=80 height=80>';
+                str += '<span class="delBtn" data-index="'+f.lastModified+'"> x </span>';
+                str += '</li>';
+                $(str).appendTo('#Preview3');
+              } 
+              reader.readAsDataURL(f);
+            }
+          })
+	      }
+		  });
+		  
+		  //미리보기 이미지 삭제
+		  $(document).on("click",".delBtn",function(){
+				//삭제할 이미지타이틀 가져와서 선택된 input배열에서 삭제
+		    var removeTargetId  = $(this).data('index'); 
+		    var removeTarget  =	$('#'+ removeTargetId );
+		    var files = $(this).closest('div').children().first().find('input')[0].files; 
+		    var dataTranster = new DataTransfer();
+		    
+
+				console.log(removeTarget);
+				
+				 Array.from(files)
+                    .filter(file => file.lastModified != removeTargetId)
+                    .forEach(file => {
+                    dataTranster.items.add(file);
+                 });
+                 
+ 				 $(this).closest('div').children().first().find('input')[0].files = dataTranster.files;
+
+         removeTarget.parent('li').remove();
+        
+		    
+		 	 	//console.log(fileData.files);
+
+		 	 	//$(this).parent('li').remove();
+		 	 	
+		  });
+			
+  		
   		//포트폴리오 수정		
     	$('#modal').on('submit', '#frm_modi', function(e) {	
 				e.preventDefault();													
@@ -562,69 +707,23 @@ Follow: http://www.twitter.com/themehats
 	        processData:false,  
 					success: function(data){
 						alert('수정되었습니다.');
-						$('.imgs_wrap').empty();
-						$("#modal").modal("hide");
+						$('#Preview, #Preview2, #Preview3').empty();
+						$("#AddImgs, #AddImgs2, #AddImgs3").val("");
+						//$("#modal").modal("hide");
 						$('#example').DataTable().ajax.reload();
+						$("#modal").reload();
+						
+						
 					}
 			  });
+			  
 			});	   
     	
-
     });
     
+
     
-    
-    // 미리보기 이미지 함수
-    function fileUploadAction() {
-      //console.log("fileUploadAction");
-      $("#input_imgs").trigger('click');
-    }
-
-    function handleImgFileSelect(e) {
-
-      // 이미지 정보들을 초기화
-      sel_files = [];
-      $(".imgs_wrap").empty();
-
-      var files = e.target.files;
-      var filesArr = Array.prototype.slice.call(files);  //새로운 Array를 변환하기 위하여 Function.prototype.call()으로 바인딩(주어진 this값 및 전달된 인수와 함께 호출)
-
-      var index = 0;
-      filesArr.forEach(function(f) {
-          if(!f.type.match("image.*")) {
-              alert("확장자는 이미지 확장자만 가능합니다.");
-              return;
-          }
-
-          sel_files.push(f); //이미지 정보 배열에 추가
-
-          var reader = new FileReader();
-          reader.onload = function(e) {
-              var html = "<div class=\"wrap_div_img\" id=\"img_id_"+index+"\" style=\"display: inline-block\">" +
-								"<button type=\"button\" class=\"close AClass\" style=\"color:red;\" onclick=\"deleteImageAction("+index+")\"><span><i class=\"fa fa-times-circle\" aria-hidden=\"true\" style=\"margin-left:-10px;\"></i></span></button>"+
-		   						"<img src=\"" + e.target.result + "\" ></a>"+
-								"</div>";
-              $(".imgs_wrap").append(html);
-              index++;
-
-          }
-          reader.readAsDataURL(f);
-          
-      });
-    }
-
-    function deleteImageAction(index) {
-      console.log("index : "+index);
-      console.log("sel length : "+sel_files.length);
-
-      sel_files.splice(index, 1);
-
-      var img_id = "#img_id_"+index;
-      $(img_id).remove(); 
-    }
-    
-   
-    
+ 
     
 		</script>
 		
@@ -636,21 +735,56 @@ Follow: http://www.twitter.com/themehats
 	</body>
 	
 	<style>
-  input[type=file] {
-      display: none;
-  }
+		
+  .inputFile,#Preview,#Preview2,#Preview3,
+	#Preview li,#Preview2 li,#Preview3 li{
+	    float:left;
+	}
+	.inputFile{
+	   padding: 10px 10px 5px 10px;
+	}
+	.pre_imglist li{
+			border: 1px solid #b7b7b7;
+			list-style: none;
+	}
+	.addImgBtn{
+	    width: 80px !important;
+	    height: 80px !important;
+	    line-height: 71px !important;
+	    background-color:#D6E4E5 !important;
+	    color: #111 !important;
+	    font-size: 15px !important;
+	    padding: 0 !important;
+	    text-align:center;
+	}
 
-  .imgs_wrap {
-      border: 1px solid #A8A8A8;
-      width: 100%;
-      margin-top: 20px;
-      padding: 5px;
-  }
-  .imgs_wrap img {
-      max-width: 150px;
-      max-height: 100px;
-      margin: 5px;
+	#Preview,#Preview2,#Preview3{
+	    list-style:none;
+	    display:inline;
+	    padding:0;
+	}
 
-  }
+	#Preview li,#Preview2 li,#Preview3 li{
+			margin: 10px;
+	    position: relative;
+	    cursor:move;
+	    border: none;
+	}
+	.delBtn{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    font-size: 13px;
+	    background-color: #000;
+	    color: #fff;
+	    width: 18px;
+	    height: 18px;
+	    line-height: 16px;
+	    display: inline-block;
+	    text-align: center;
+	    cursor: pointer;
+	}
+  
 	</style>
+	
 </html>

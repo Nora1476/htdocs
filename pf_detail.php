@@ -9,13 +9,18 @@
 		  		  
 		  settype( $_GET['no'], 'integer');
 		 			  
-			$sql=" SELECT a.file, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
-		    		where b.no=$no ";
-
-			
+			$sql=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
+		    		where b.no=$no and a.seq=1 ";
+		  
+	  	$sql2=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
+	    		where b.no=$no and a.seq=2 ";  		
+		 
+		 	$sql3=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
+	    		where b.no=$no and a.seq=3 ";  	   		
+		    		
 			$result = mysqli_query($conn, $sql);	
-			$row = mysqli_fetch_array($result);
-			
+			$result2 = mysqli_query($conn, $sql2);
+			$result3 = mysqli_query($conn, $sql3);
 				
 		?>
 
@@ -76,15 +81,13 @@ Follow: http://www.twitter.com/themehats
 	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 	<link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
 
+	<!-- slick slider-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" rel="stylesheet" />
 	
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-mobile-fixed">
-	
-
-
-	
-	
 	
 	<!-- BEGIN: LAYOUT/HEADERS/HEADER-ONEPAGE -->
 	<!-- BEGIN: HEADER -->
@@ -163,32 +166,37 @@ Follow: http://www.twitter.com/themehats
 					</ul>
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane fade in active" id="tab-1">
-							
-							
-							
-
-
+							 <section class="slider">
+						     <? 
+									while($row = mysqli_fetch_array($result)){	
+									 	echo "<div>";														
+									 	echo "	<img src='./" .$row['file']. "'>";	
+									 	echo "</div>";										
+									}		
+							 	 ?>
+							 </section>
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="tab-2">
-							
+							<section class="slider">
+						     <? 
+									while($row2 = mysqli_fetch_array($result2)){	
+									 	echo "<div>";														
+									 	echo "	<img src='./" .$row2['file']. "'>";	
+									 	echo "</div>";										
+									}		
+							 	 ?>
+							 </section>
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="tab-3">
-							<ul class="c-tab-items">
-								<li class="row">
-									<div class="col-sm-4 col-xs-5">
-										<img class="img-responsive" width="350" height="230"
-											src="../../assets/base/img/content/stock/42.jpg"  alt=""/>
-									</div>
-									<div class="col-sm-8 col-xs-7">
-										<h4 class="c-font-23">Incredible Robust</h4>
-										<p>Lorem ipsum dolor sit amet, consectetuer
-											adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-											magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-											exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-											consequat.</p>
-									</div>
-								</li>
-							</ul>
+							<section class="slider">
+						    <? 
+									while($row3 = mysqli_fetch_array($result3)){	
+									 	echo "<div>";														
+									 	echo "	<img src='./" .$row3['file']. "'>";	
+									 	echo "</div>";										
+									}		
+							 	?>
+							 </section>
 						</div>
 					</div>
 					
@@ -307,10 +315,27 @@ Follow: http://www.twitter.com/themehats
 	<script src="./assets/base/js/components-shop.js" type="text/javascript"></script>
 	<script src="./assets/base/js/app.js" type="text/javascript"></script>
 
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	
 	<script>
 		$(document).ready(function() {
 			App.init(); // init core  
+			
+			//첫 로드에 이미지 보이도록 설정 (Image showing on initial load)
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		    $('.slider').slick('setPosition');
+		  });
+
+			$('.slider').slick({
+				setPosition : 0,
+			  dots: true,
+			  infinite: true,
+			  speed: 500,
+			  fade: true,
+			  cssEase: 'linear',
+			});	
+			
+			
 		  $("#naver").hover(
 				function () { // mouseover
 					$(this).attr("src","./img_main/naver2.png");
@@ -329,6 +354,34 @@ Follow: http://www.twitter.com/themehats
 	<!-- END: PAGE SCRIPTS -->
 	<!-- END: LAYOUT/BASE/BOTTOM -->
 </body>
+
+<style>
+
+	.slick-slide img {
+		width: 100% !important;
+  	height: auto;
+  	display: block;
+	}
+	.slick-next, .slick-prev {
+		transform: translate(100%,-50%);
+		z-index:1000;
+		width: 50px;
+    height: 50px; 
+	}
+
+	.slick-next, .slick-next {
+		transform: translate(-100%,-50%);
+		z-index:1000;
+		width: 50px;
+    height: 50px; 
+	}
+	
+	.slick-next:before, .slick-prev:before {
+		font-size: 30px;
+		color: #D6E4E5;
+	}
+
+</style>
 
 </html>
 

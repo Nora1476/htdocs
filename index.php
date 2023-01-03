@@ -321,7 +321,7 @@ Follow: http://www.twitter.com/themehats
 					<div class="portBtn" style="text-align: center; margin-top:20px;">
 						<a href="portfolio.php">
 							<button type="button" class="btn btn-md c-btn-border-2x c-btn-square c-btn-regular c-btn-uppercase c-btn-bold c-margin-b-100">
-								More</button>
+								공간공작소 포트폴리오 보러가기</button>
 						</a>
 					</div>
 				</div>
@@ -418,50 +418,36 @@ Follow: http://www.twitter.com/themehats
 						<div class="c-content-title-1">
 							<h3 class="c-center c-font-uppercase c-font-bold">Customer Reviews</h3>
 							<div class="c-line-center c-theme-bg"></div>
-
 						</div>
-						<div class="owl-carousel owl-theme c-theme c-owl-nav-center" data-items="3" data-slide-speed="8000" data-rtl="false">
-							<div class="item">
-								<div class="c-content-testimonial-3 c-option-light">
-									<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-									</div>
-									<div class="c-person">
-										<img src="./assets/base/img/content/avatars/team1.jpg" class="img-responsive">
-										<div class="c-person-detail c-font-uppercase">
-											<h4 class="c-name">Mark Doe</h4>
-											<p class="c-position c-font-bold c-theme-font">CFO, Walmart</p>
+						<div class="c-content-panel">
+							<div class="c-body" style="padding:10px">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="c-body" >
+											<div class="c-row">
+												<div style="margin:10px; margin-top:20px; line-height:30px;">
+													<h2> 안녕하세요. 이 집을 의뢰한 사람입니다. </h2>
+												</div>
+											</div>
+											<div class="c-content-divider c-divider-sm c-left c-theme-bg">
+												<i class="icon-dot c-theme-bg"></i>
+											</div>
+											<div class="c-row c-center" style="margin:0 5px; line-height:30px;">
+												<p> 
+													이사를 오면서 한 공사가 아니었기에, 큰 살림살이는 집 안에 두고 진행한 어려운 공사였습니다. <br><br>
+													견적을 보러 오시는 순간도, 다른 견적을 부탁한 곳들과 다르게 집 모든 곳을 꼼꼼히 체크하셨고, 
+													견적 미팅을 한 날짜, 공사가 진행되면서 생긴 작은 문제점들을 처리하는 과정, 그리고 사후 문제 처리까지, 모든 것이 잡음없이 잘 진행이 되었습니다.<br><br>
+													 몇년만 지내다가 옮겨갈 예정으로 한 공사이지만, 더 있고 싶을 정도로 모든 가족들의 만족도가 높습니다. <br>
+													제가 느낀 점은 다른 분들께도 자신있게 추천해드릴 수 있다입니다.<br> 고민 되시는 분들께서는 한번 만나 뵙고 이야기를.....
+												</p>
+												<a href="https://www.youtube.com/channel/UCVJmFrvPvcEfZ83xsWGn1Fw" target="_blank" 
+													 class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold" style="margin-top:30px;">공간공작소 유투브 보러가기</a>
+											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="c-content-testimonial-3 c-option-light">
-									<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-									</div>
-									<div class="c-person">
-										<img src="./assets/base/img/content/avatars/team6.jpg" class="img-responsive">
-										<div class="c-person-detail c-font-uppercase">
-											<h4 class="c-name">Ashley Benson</h4>
-											<p class="c-position c-font-bold c-theme-font">CFO, Loop Inc</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="c-content-testimonial-3 c-option-light">
-									<div class="c-content">
-										Lorem ipsum dolor sit amet et consectetuer adipiscing elit, sed nonummy nib euismod
-										tincid unt ut ed laoreet dolore sit amet consectetuer adipiscing.
-									</div>
-									<div class="c-person">
-										<img src="./assets/base/img/content/avatars/team4.jpg" class="img-responsive">
-										<div class="c-person-detail c-font-uppercase">
-											<h4 class="c-name">Nina Kunis</h4>
-											<p class="c-position c-font-bold c-theme-font">CFO, ERA Tech</p>
+									<div class="col-md-6">
+										<div class="embed-responsive embed-responsive-4by3" style="margin-top:100px; ">
+											<iframe src="https://www.youtube.com/embed/Y8KyHpLegFc" class="embed-responsive-item" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 										</div>
 									</div>
 								</div>

@@ -22,32 +22,36 @@ Follow: http://www.twitter.com/themehats
 				<meta content="" name="description" />
 				<meta content="" name="author" />
 				<!-- BEGIN GLOBAL MANDATORY STYLES -->
-				<link
-    href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
-    rel='stylesheet' type='text/css'>
-					<link href="./assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-					<!-- END GLOBAL MANDATORY STYLES -->
-					<!-- BEGIN: BASE PLUGINS  -->
-					<link href="./assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
-					<!-- END: BASE PLUGINS -->
-					<!-- BEGIN THEME STYLES 
-					<link href="./assets/demos/default/css/pluGins.css" rel="stylesheet" type="text/css" />-->
-					<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
-					<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
-					<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
+				<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all' rel='stylesheet' type='text/css'>
+				<link href="./assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
+				<link href="./assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
+				<link href="./assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+				<link href="./assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+				<link href="./assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
+				<link href="./assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+				<!-- END GLOBAL MANDATORY STYLES -->
+				<!-- BEGIN: BASE PLUGINS  -->
+				<link href="./assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
+				<link href="./assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+				<link href="./assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+				<link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
+				<!-- END: BASE PLUGINS -->
+				<!-- BEGIN THEME STYLES 
+				<link href="./assets/demos/default/css/pluGins.css" rel="stylesheet" type="text/css" />-->
+				<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+				<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
+				<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
+			
+				<!-- END THEME STYLES -->
+				<link rel="shortcut icon" href="favicon.ico" />
+				<link href="./main.css" rel="stylesheet" type="text/css">
+				<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 				
-					<!-- END THEME STYLES -->
-					<link rel="shortcut icon" href="favicon.ico" />
-					<link href="./main.css" rel="stylesheet" type="text/css">
-
+				<!-- 구글폰트 -->
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+				<link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
 								
 	</head>
 	
@@ -79,7 +83,7 @@ Follow: http://www.twitter.com/themehats
 					<!-- BEGIN: BRAND -->
 					<div class="c-navbar-wrapper clearfix">
 						<div class="c-brand c-pull-left">
-							<a href="index.html" class="c-logo">
+							<a href="admin_main.php" class="c-logo">
 								<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo">
 									<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo-inverse">
 										<img src="./img_main/logo1.png" alt="JANGO" class="c-mobile-logo">
@@ -187,49 +191,38 @@ Follow: http://www.twitter.com/themehats
 										</div>
 
 										<div class="form-group">
-											<label for="" class="col-md-2 control-label" >이미지 <br> 파일첨부</label>
-											<ul class="col-md-8 input_wrap">		
-												<li style="list-style:none;">
-									        <div class="input_wrap">
-								            <a href="javascript:" onclick="fileUploadAction();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
-								            <input type="file" name="files[]" id="input_imgs" multiple />
-								            <input type="text" name="seq" id="seq" value=1 multiple style="display:none;"/>
-									        </div>
-									        
-									        <h5 style="font-size:small;"><b>공사후 사진 미리보기</b></h5>
-									        <div class="imgs_wrap" style="margin-top:-5px;">
-									        	<img id="img" />
-									        </div>     
+											<label for="" class="col-md-2 control-label">이미지파일 <br>업로드</label>
+											<ul class="col-md-8 pre_imglist">		
+												<li>
+													<div class="filebox clearfix">
+													    <div class="inputFile">
+												        <label for="AddImgs" class="addImgBtn">공사후 </label>
+												        <input type="file" name="files[]" id="AddImgs"  accept=".jpg, .png, .gif" multiple /><!-- style="display:none;"-->
+													    </div>
+													    <ul id="Preview" class="sortable"></ul> 
+													</div>										    
 								        </li>
 								        
-								        <li style="list-style:none;">
-									        <div class="input_wrap2">
-								            <a href="javascript:" onclick="fileUploadAction2();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
-								            <input type="file" name="files[]" id="input_imgs2" multiple />
-								            <input type="text" name="seq" id="seq" value=2 multiple style="display:none;"/>
-									        </div>
-									        
-									        <h5 style="font-size:small;"><b>공사전 사진 미리보기</b></h5>
-									        <div class="imgs_wrap2" style="margin-top:-5px;">
-									        	<img id="img" />
-									        </div>     
+								        <li>
+													<div class="filebox clearfix">
+													    <div class="inputFile">
+												        <label for="AddImgs2" class="addImgBtn">공사전 </label>
+												        <input type="file" name="files2[]" id="AddImgs2"  accept=".jpg, .png, .gif" multiple />
+													    </div>
+													    <ul id="Preview2" class="sortable"></ul> 
+													</div>										    
 								        </li>
 								        
-								        <li style="list-style:none ;">
-									        <div class="input_wrap3">
-								            <a href="javascript:" onclick="fileUploadAction3();" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" >파일 업로드</a>
-								            <input type="file" name="files[]" id="input_imgs3" multiple />
-								            <input type="text" name="seq" id="seq" value=3 multiple style="display:none;"/>
-									        </div>
-									        
-									        <h5 style="font-size:small;"><b>평면도 사진 미리보기</b></h5>
-									        <div class="imgs_wrap3" style="margin-top:-5px;">
-									        	<img id="img" />
-									        </div>     
-								        </li>
-									    </ul> 
-									    
-									      
+								        <li>
+													<div class="filebox clearfix">
+													    <div class="inputFile">
+												        <label for="AddImgs3" class="addImgBtn">평면도 </label>
+												        <input type="file" name="files3[]" id="AddImgs3"  accept=".jpg, .png, .gif" multiple />
+													    </div>
+													    <ul id="Preview3" class="sortable"></ul> 
+													</div>										    
+								        </li> 
+									    </ul>     
 										</div>
 										
 																			
@@ -326,33 +319,27 @@ Follow: http://www.twitter.com/themehats
 		<script src="./assets/base/js/components-shop.js" type="text/javascript"></script>
 		<script src="./assets/base/js/app.js" type="text/javascript"></script>
 		
-		
-		
+		<!-- sortable 드래그앤드롭-->
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" ></script>
 		
 		
 		<script>
-		
-		 // 이미지 정보들을 담을 배열
-     var sel_files = [];
-			
+
     $(document).ready(function () {
       App.init(); // init core 
     
+    	//footer SNS아이콘
       $("#naver").hover(
-					function () { // mouseover
-						$(this).attr("src","./img_main/naver2.png");
-					},function () { // mouseover
-						$(this).attr("src","./img_main/naver.png");
-					}
-				);
+				function () { // mouseover
+					$(this).attr("src","./img_main/naver2.png");
+				},function () { // mouseover
+					$(this).attr("src","./img_main/naver.png");
+				}
+			);
+				
+				
+				
      
-      
-      //이미지 선택시 미리보기
-      $("#input_imgs").on("change", handleImgFileSelect);
-      $("#input_imgs2").on("change", handleImgFileSelect2);
-      $("#input_imgs3").on("change", handleImgFileSelect3);
-        
-        
       //파일 업로드
       $('#uploadForm').on('submit', function(e){  
          e.preventDefault();  
@@ -390,148 +377,157 @@ Follow: http://www.twitter.com/themehats
 				}
 
          
-         $.ajax({  
-		       url: "pf_insert.php",  
-		       type: "POST",  
-		       data: data,  
-		       cache: false,
-		       contentType: false,  
-		       processData:false,  
-		       success: function(data)  
-          {  
+        $.ajax({  
+		      url: "pf_insert.php",  
+		      type: "POST",  
+		      data: data,  
+		      cache: false,
+		      contentType: false,  
+		      processData:false,  
+		      success: function(data){  
 	          alert("업로드 완료되었습니다."); 
 	          console.log(data);
 	         	location.replace('pf_admin.php');
 	        }  
-         });  
+        });  
       }); 
       
- 
-          
-    });
-    
-    //공사후 이미지 미리보기 함수
-    function fileUploadAction() {
-      $("#input_imgs").trigger('click');
-    }
-    function handleImgFileSelect(e) {
+      
 
-      // 이미지 정보들을 초기화
-      sel_files = [];
-      $(".imgs_wrap").empty();
 
-      var files = e.target.files;
-      var filesArr = Array.prototype.slice.call(files);  //새로운 Array를 변환하기 위하여 Function.prototype.call()으로 바인딩(주어진 this값 및 전달된 인수와 함께 호출)
+		  //드래그 앤 드롭
+		  $(".sortable").sortable();
+		  
+		  //이미지 등록
+		  $("#AddImgs").change(function(e){
+		      //div 내용 비워주기
+		      $('#Preview').empty();
 
-      var index = 0;
-      filesArr.forEach(function(f) {
-          if(!f.type.match("image.*")) {
-              alert("확장자는 이미지 확장자만 가능합니다.");
-              return;
-          }
+		      var files = e.target.files;
+		      var arr = Array.prototype.slice.call(files);
 
-          sel_files.push(f); //이미지 정보 배열에 추가
+		      preview(arr);
 
-          var reader = new FileReader();
-          reader.onload = function(e) {
-              var html = "<div class=\"wrap_div_img\" id=\"img_id_"+index+"\" style=\"display: inline-block\">" +
-								"<button type=\"button\" class=\"close AClass\" style=\"color:red;\" onclick=\"deleteImageAction("+index+")\"><span><i class=\"fa fa-times-circle\" aria-hidden=\"true\" style=\"margin-left:-10px;\"></i></span></button>"+
-		   						"<img src=\"" + e.target.result + "\" ></a>"+
-								"</div>";
-              $(".imgs_wrap").append(html);
-              index++;
+		      function preview(arr){
+	          arr.forEach(function(f){
 
-          }
-          reader.readAsDataURL(f);
-          
-      });
-    }
-    
-    //공사전 이미지 미리보기 함수
-    function fileUploadAction2() {
-      $("#input_imgs2").trigger('click');
-    }
-     function handleImgFileSelect2(e) {
+              //div에 이미지 추가
+              var str = '<li class="ui-state-default">';
+              //str += '<span>'+fileName+'</span><br>';
 
-      // 이미지 정보들을 초기화
-      sel_files = [];
-      $(".imgs_wrap2").empty();
+              //이미지 파일 미리보기
+              if(f.type.match('image.*')){
+                //파일을 읽기 위한 FileReader객체 생성
+                var reader = new FileReader(); 
+                reader.onload = function (e) { 
+                  //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
+                  str += '<img src="'+e.target.result+'" title="'+f.name+'" id="'+f.lastModified+'"  width=80 height=80>';
+                  str += '<span class="delBtn" data-index="'+f.lastModified+'"> x </span>';
+                  str += '</li>';
+                  $(str).appendTo('#Preview');
+                } 
+                reader.readAsDataURL(f);
+              }
+	          })
+		      }
+		  })
+		  $("#AddImgs2").change(function(e){
+	      //div 내용 비워주기
+	      $('#Preview2').empty();
 
-      var files = e.target.files;
-      var filesArr = Array.prototype.slice.call(files);  //새로운 Array를 변환하기 위하여 Function.prototype.call()으로 바인딩(주어진 this값 및 전달된 인수와 함께 호출)
+	      var files = e.target.files;
+	      var arr = Array.prototype.slice.call(files);
 
-      var index = 0;
-      filesArr.forEach(function(f) {
-          if(!f.type.match("image.*")) {
-              alert("확장자는 이미지 확장자만 가능합니다.");
-              return;
-          }
+	      preview(arr);
 
-          sel_files.push(f); //이미지 정보 배열에 추가
+	      function preview(arr){
+          arr.forEach(function(f){
+              
+            //div에 이미지 추가
+            var str = '<li class="ui-state-default">';
+            //str += '<span>'+fileName+'</span><br>';
 
-          var reader = new FileReader();
-          reader.onload = function(e) {
-              var html = "<div class=\"wrap_div_img\" id=\"img_id_"+index+"\" style=\"display: inline-block\">" +
-								"<button type=\"button\" class=\"close AClass\" style=\"color:red;\" onclick=\"deleteImageAction("+index+")\"><span><i class=\"fa fa-times-circle\" aria-hidden=\"true\" style=\"margin-left:-10px;\"></i></span></button>"+
-		   						"<img src=\"" + e.target.result + "\" ></a>"+
-								"</div>";
-              $(".imgs_wrap2").append(html);
-              index++;
+            //이미지 파일 미리보기
+            if(f.type.match('image.*')){
+              //파일을 읽기 위한 FileReader객체 생성
+              var reader = new FileReader(); 
+              reader.onload = function (e) { 
+                //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
+                str += '<img src="'+e.target.result+'" title="'+f.name+'" id="'+f.lastModified+'"  width=80 height=80>';
+                str += '<span class="delBtn" data-index="'+f.lastModified+'"> x </span>';
+                str += '</li>';
+                $(str).appendTo('#Preview2');
+              } 
+              reader.readAsDataURL(f);
+            }
+          })
+	      }
+		  })
+		  $("#AddImgs3").change(function(e){
+	      //div 내용 비워주기
+	      $('#Preview3').empty();
 
-          }
-          reader.readAsDataURL(f);
-          
-      });
-    }
-    
-    //평면도 이미지 미리보기 함수
-    function fileUploadAction3() {
-      $("#input_imgs3").trigger('click');
-    }
-     function handleImgFileSelect3(e) {
+	      var files = e.target.files;
+	      var arr = Array.prototype.slice.call(files);
 
-      // 이미지 정보들을 초기화
-      sel_files = [];
-      $(".imgs_wrap3").empty();
+	      preview(arr);
 
-      var files = e.target.files;
-      var filesArr = Array.prototype.slice.call(files);  //새로운 Array를 변환하기 위하여 Function.prototype.call()으로 바인딩(주어진 this값 및 전달된 인수와 함께 호출)
+	      function preview(arr){
+          arr.forEach(function(f){
 
-      var index = 0;
-      filesArr.forEach(function(f) {
-          if(!f.type.match("image.*")) {
-              alert("확장자는 이미지 확장자만 가능합니다.");
-              return;
-          }
+            //div에 이미지 추가
+            var str = '<li class="ui-state-default">';
+            //str += '<span>'+fileName+'</span><br>';
 
-          sel_files.push(f); //이미지 정보 배열에 추가
+            //이미지 파일 미리보기
+            if(f.type.match('image.*')){
+              //파일을 읽기 위한 FileReader객체 생성
+              var reader = new FileReader(); 
+              reader.onload = function (e) { 
+                //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
+                str += '<img src="'+e.target.result+'" title="'+f.name+'" id="'+f.lastModified+'"  width=80 height=80>';
+                str += '<span class="delBtn" data-index="'+f.lastModified+'"> x </span>';
+                str += '</li>';
+                $(str).appendTo('#Preview3');
+              } 
+              reader.readAsDataURL(f);
+            }
+          })
+	      }
+		  })
+		  
+		  //미리보기 이미지 삭제
+		  $(document).on("click",".delBtn",function(){
+				//삭제할 이미지타이틀 가져와서 선택된 input배열에서 삭제
+		    var removeTargetId  = $(this).data('index'); 
+		    var removeTarget  =	$('#'+ removeTargetId );
+		    var files = $(this).closest('div').children().first().find('input')[0].files;  //files 확인안됨 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+		    var dataTranster = new DataTransfer();
+		    
 
-          var reader = new FileReader();
-          reader.onload = function(e) {
-              var html = "<div class=\"wrap_div_img\" id=\"img_id_"+index+"\" style=\"display: inline-block\">" +
-								"<button type=\"button\" class=\"close AClass\" style=\"color:red;\" onclick=\"deleteImageAction("+index+")\"><span><i class=\"fa fa-times-circle\" aria-hidden=\"true\" style=\"margin-left:-10px;\"></i></span></button>"+
-		   						"<img src=\"" + e.target.result + "\" ></a>"+
-								"</div>";
-              $(".imgs_wrap3").append(html);
-              index++;
+				console.log(removeTarget);
+				
+				 Array.from(files)
+                    .filter(file => file.lastModified != removeTargetId)
+                    .forEach(file => {
+                    dataTranster.items.add(file);
+                 });
+                 
+ 				 $(this).closest('div').children().first().find('input')[0].files = dataTranster.files;
 
-          }
-          reader.readAsDataURL(f);
-          
-      });
-    }
+         removeTarget.parent('li').remove();
+        
+		    
+		 	 	//console.log(fileData.files);
 
-		//미리보기 이미지 삭제
-    function deleteImageAction(index) {
-      console.log("index : "+index);
-      console.log("sel length : "+sel_files.length);
+		 	 	//$(this).parent('li').remove();
+		 	 	
+		  });
+			
+	  
+	})
+      
 
-      sel_files.splice(index, 1);
-
-      var img_id = "#img_id_"+index;
-      $(img_id).remove(); 
-    }
-    
     
 		</script>
 		<!-- END: THEME SCRIPTS -->
@@ -545,27 +541,55 @@ Follow: http://www.twitter.com/themehats
 	
 	<style>
 		
-  .ck-editor__editable { height: 400px; }
-  .ck-content { font-size: 12px; }
-  input[type=file] {
-      display: none;
-  }
+  .inputFile,
+	#Preview,#Preview2,#Preview3,
+	#Preview li,#Preview2 li,#Preview3 li{
+	    float:left;
+	}
+	.inputFile{
+	   padding: 10px 10px 5px 10px;
+	}
+	.pre_imglist li{
+			border: 1px solid #b7b7b7;
+			list-style: none;
+	}
+	.addImgBtn{
+	    width: 80px !important;
+	    height: 80px !important;
+	    line-height: 71px !important;
+	    background-color:#D6E4E5 !important;
+	    color: #111 !important;
+	    font-size: 15px !important;
+	    padding: 0 !important;
+	    text-align:center;
+	}
 
-  .imgs_wrap, .imgs_wrap2, .imgs_wrap3  {
-      border: 1px solid #A8A8A8;
-      margin-top: 20px;
-      padding: 5px;
-  }
-  .imgs_wrap img, .imgs_wrap2 img, .imgs_wrap3 img {
-      max-width: 150px;
-      max-height: 100px;
-      margin: 5px;
-  }
-  
-  ul li{
-  	margin-top:10px;
-  }
-  
+	#Preview,#Preview2,#Preview3{
+	    list-style:none;
+	    display:inline;
+	    padding:0;
+	}
+
+	#Preview li,#Preview2 li,#Preview3 li{
+			margin: 10px;
+	    position: relative;
+	    cursor:move;
+	    border: none;
+	}
+	.delBtn{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    font-size: 13px;
+	    background-color: #000;
+	    color: #fff;
+	    width: 18px;
+	    height: 18px;
+	    line-height: 16px;
+	    display: inline-block;
+	    text-align: center;
+	    cursor: pointer;
+	}
   
 	</style>
 	

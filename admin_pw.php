@@ -61,16 +61,17 @@ Follow: http://www.twitter.com/themehats
 		
 		<?php
 			session_start();
+			
+			 $session_username = $_SESSION[ 'username' ];
 			//print_r($_SESSION);
+			
 
 			//로그인 세션이 없을 경우 admin_amin.php로 이동하여 로그인 유도
-			if(!isset($_SESSION['username'])) {
-			   
+			if(!isset( $session_username)) {		   
 				echo "<script>alert('로그인이 필요한 페이지 입니다.')</script>";
 	    	echo "<script>location.replace('index_admin.php');</script>";
-	    	
 			}
-		
+			
 		?>
 		
 		
@@ -108,11 +109,8 @@ Follow: http://www.twitter.com/themehats
 										<a href="pf_admin.php" class="c-link">Portfolio</a>
 									</li>
 									<li class="c-onepage-link " >
-			                <a href='admin_pw.php' class="c-link">Change Password</a>
-			             </li>
-									<li class="c-onepage-link " >
 			                <a href='admin_logout.php' class="c-link">Logout</a>
-			             </li>
+			              </li>
 								</ul>
 							</nav>
 							<!-- END: MEGA MENU -->
@@ -126,139 +124,52 @@ Follow: http://www.twitter.com/themehats
 		  <!-- BEGIN: PAGE CONTAINER -->
 		  <div class="c-layout-page">
 
-		    <section class="c-layout-revo-slider c-layout-revo-slider-7" dir="ltr">
-		      <div class="tp-banner-container tp-fullscreen tp-fullscreen-mobile">
-		        <div class="c-singup-form">
-		          <h3 class="c-font-54 c-font-thin c-font-white c-margin-b-40 c-font-uppercase">
-		            공간공작소  <span class="c-theme-font c-font-bold"> 관리자 </span> 페이지
-		          </h3>
+		  	<section class="c-layout-revo-slider c-layout-revo-slider-7" dir="ltr">
+					<div class="tp-banner-container tp-fullscreen tp-fullscreen-mobile">
+						<div class="c-singup-form">
+							<h3 class="c-font-54 c-font-thin c-font-white c-margin-b-40 c-font-uppercase">
+		            관리자페이지 <span class="c-theme-font c-font-bold"> 비밀번호 </span> 변경
+		          </h3>>
 
-		          <h5 class="c-font-24 c-font-thin c-font-uppercase c-font-white c-subtitle c-margin-b-40">
-		            관리자 페이지에 오신 것을 환영합니다.
-		          </h5>
-							
-		        </div>
-		        <div class="tp-banner rev_slider" data-version="5.0">
-		          <ul>
-		            <!--BEGIN: SLIDE #1 -->
-		            <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
-		              <img alt="" src="./assets/base/img/content/backgrounds/bg-56.jpg" data-bgposition="center center"
-		                data-bgfit="cover" data-bgrepeat="no-repeat">
-		            </li>
-		            <!--END -->
-
-		            <!--BEGIN: SLIDE #2 -->
-		            <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
-		              <img alt="" src="./assets/base/img/content/backgrounds/bg-57.jpg" data-bgposition="center center"
-		                data-bgfit="cover" data-bgrepeat="no-repeat">
-		            </li>
-		            <!--END -->
-		          </ul>
-		        </div>
-		      </div>
-		    </section>
-
-		    <section id="contact">
-					<!-- BEGIN: CONTENT/CONTACT/FEEDBACK-2 -->
-					<div class="c-content-box c-size-md c-no-padding c-bg-img-center">
-						<div class="container">
-							<div class="c-content-feedback-1 c-option-2">
-								<div class="c-content-title-1">
-									<h3 class="c-center c-font-uppercase c-font-bold">Contact</h3>
-									<div class="c-line-center c-theme-bg"></div>
+							<h5 class="c-font-24 c-font-thin c-font-uppercase c-font-white c-subtitle c-margin-b-40">
+								새로운 비밀번호를 입력해주세요.
+							</h5>
+								
+							<!-- 비밀번호 변경 -->
+							<form class="form-block"  id="adminPw" >
+								<div class="form-group">
+									<input type="password" name="current_password" class="form-control c-bg-transparent input-lg c-theme c-square c-center" placeholder="현재비밀번호" 
+												 style="max-width:500px; margin:0 auto;">
 								</div>
-								<div class="row" style="padding:0;">
-									<div class="col-md-1"></div>
-									<div class="col-md-10">
-										<div class="c-contact">
-
-										<table id="example" class="display" style="width:100%">
-							        <thead>
-						            <tr>
-						            	<th>ID</th>
-					                <th>성함</th>
-					                <th>연락처</th>
-					                <th>현장위치</th>
-					                <th>임대차계약</th>
-					                <th>유형</th>
-					                <th>기타내용</th>
-					                <th>문의일자</th>
-						            </tr>
-							        </thead>
-							        <tfoot>
-						            <tr>
-						            	<th>ID</th>
-					                <th>성함</th>
-					                <th>연락처</th>
-					                <th>현장위치</th>
-					                <th>임대차계약</th>
-					                <th>유형</th>
-					                <th>기타내용</th>
-					                <th>문의일자</th>
-						            </tr>
-							        </tfoot>
-								    </table>
-
-										</div>
-									</div>
-									<div class="col-md-1"></div>
+								<div class="form-group">
+									<input type="password" name="new_password" class="form-control c-bg-transparent input-lg c-theme c-square  c-center" placeholder="새로운 비밀번호"
+												 style="max-width:500px; margin:0 auto;">
 								</div>
-							</div>
+								<div class="form-group">
+									<input type="password" name="new_password_confirm" class="form-control c-bg-transparent input-lg c-theme c-square  c-center" placeholder="새로운 비밀번호 확인"
+									       style="max-width:500px; margin:0 auto;">
+								</div>
+								<input type="submit" class="btn btn-lg btn-danger c-btn-uppercase c-btn-square c-btn-bold" value="비밀번호 변경하기">
+
+							</form>
+						</div>
+						<div class="tp-banner rev_slider" data-version="5.0">
+							<ul>
+						 		<!--BEGIN: SLIDE #2 -->
+								<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">			
+									<img 
+										alt="" 
+										src="../../assets/base/img/content/backgrounds/bg-57.jpg"
+										data-bgposition="center center" 
+										data-bgfit="cover" 
+										data-bgrepeat="no-repeat"
+									>	
+						 		</li>
+						 		<!--END -->
+							</ul>
 						</div>
 					</div>
-					<!-- END: CONTENT/CONTACT/FEEDBACK-2 -->
 				</section>
-
-				<!--Modal-->
-				<div class="modal fade" id="modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content c-square">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">×</span>&nbsp&nbsp</button>
-								<h4 class="modal-title" id="exampleModalLabel">문의글 수정 및 삭제하기</h4>
-							</div>
-							<div class="modal-body" style="font-size:10px;">
-								<form>
-									<input type="text" class="form-control c-square" id="id" name="id" style="display:none;">
-									<div class="form-group" >
-										<label for="name" class="control-label">성함 ::</label>
-										<input type="text" class="form-control c-square" id="name" name="name">
-									</div>
-									<div class="form-group">
-										<label for="phone" class="control-label">연락처 ::</label>
-										<input type="text" class="form-control c-square" id="phone" name="phone">
-									</div>
-									<div class="form-group">
-										<label for="location" class="control-label">현장위치 ::</label>
-										<input type="text" class="form-control c-square" id="location" name="location">
-									</div>
-									<div class="form-group">
-										<label for="lease_agreement" class="control-label">임대차계약 :: </label>
-										<input type="text" class="form-control c-square" id="lease_agreement" name="lease_agreement">
-									</div>
-									<div class="form-group">
-										<label for="type" class="control-label">유형 ::</label>
-										<input type="text" class="form-control c-square" id="type" name="type">
-									</div>
-									<div class="form-group">
-										<label for="content" class="control-label">기타문의내용 ::</label>
-										<textarea class="form-control  c-square" id="content" name="content"></textarea>
-									</div>
-									<div class="form-group">
-										<label for="created" class="control-label">등록일자 ::</label>
-										<input type="text" class="form-control c-square" id="created" name="created">
-									</div>
-								</form>
-							</div>
-							<div class="modal-footer">
-								<button type="button" id="btnModi" class="btn c-btn-dark c-btn-square c-btn-bold c-btn-uppercase" style="margin-right:5px;">Modify</button>
-								<button type="button" id="btnDel" class="btn c-btn-yellow-2 c-btn-square c-btn-bold c-btn-uppercase">Delete</button>
-								<button type="button" class="btn c-btn-dark c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
 
 		  </div>
 		  <!-- END: PAGE CONTAINER -->
@@ -353,164 +264,28 @@ Follow: http://www.twitter.com/themehats
 		  <script src="./assets/base/js/app.js" type="text/javascript"></script>
 
 
-		 	<!--BEGIN: datatables-->
-			<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-			<!--END: datatables-->
+		
 
 
 		  <script>
 		  $(document).ready(function () {
 		      App.init(); // init 
 		      
-		      $("#naver").hover(
-						function () { // mouseover
-							$(this).attr("src","./img_main/naver2.png");
-						},function () { // mouseover
-							$(this).attr("src","./img_main/naver.png");
-						}
-					);
 		      
-		      
-		      //dataTable 게시판
-		      var table = $('#example').DataTable({
-		        processing: true,
-		        serverSide: true,
-		        ajax: 'contact_load.php',
-		        //hidden column id
-		        columnDefs: [
-		            {
-		              target: 0,
-		              visible: false,
-		            },
-		        ],
-		        order: [[0, 'desc']],
-
-				  	search: {
-				       return: true,
-				    },
-
-		    	});
-
-	    	//모달창 오픈
-	  	  $('#example tbody').on('click', 'tr', function (e) {
-
-	  	  	e.preventDefault();
-		      var data = table.row(this).data();
-
-		      $("#modal").modal("show").modal({backdrop:'static'});
-		      	$('#id').val(data[0]);
-					  $('#name').val(data[1]);
-						$('#phone').val(data[2]);
-						$('#location').val(data[3]);
-						$('#lease_agreement').val(data[4]);
-						$('#type').val(data[5]);
-						$('#content').val(data[6]);
-						$('#created').val(data[7]);
-						
-						//폰번호 자동대시('-') 삽입
-						$('#phone').val($('#phone').val().replace(/[^0-9]/g, "").replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, "$1-$2-$3").replace("--", "-"));
-
-	    	});
-	    	
-		    	//휴대폰 번호 입력시  자동 대시('-') 기능
-				$(document).on("keyup", "#phone", function() {
-					$(this).val($(this).val().replace(/[^0-9]/g, "").replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, "$1-$2-$3").replace("--", "-"));
-				});
-				
-	
-				
-
-		    // modify
-				$("#btnModi").off('click').on('click',function(e){
-
-					e.preventDefault();
-					
-					//기본으로 들어가있는 대시 뺴고 번호만 db에 저장
-					var db_phone = NumReplace($('#phone').val());
-					console.log(db_phone);
-					
-					var id  = $('#id').val();
-					var name  = $('#name').val();
-					var phone  = db_phone;
-					var location  = $('#location').val();
-					var lease_agreement  = $('#lease_agreement').val();
-					var type  = $('#type').val();
-					var content  = $('#content').val();
-
-					//console.log(id);
-
-					$.ajax({
-						url: "contact_modi.php",
+		    $("#adminPw").submit(function(e) {
+					e.preventDefault();  
+					var data = $( "#adminPw" ).serialize();
+		      $.ajax({
+						url: "admin_pw_ok.php",
 						type: "POST",
-						data:{
-							id:id,
-							name: name,
-							phone: db_phone,
-							location: location,
-							lease_agreement: lease_agreement,
-							type: type,
-							content: content
+						data: data,
+						success: function(data) {
+							alert(data);
+							//location.replace('index_admin.php');
 						},
-						success: function(data){
-							$("#modal").modal("hide");
-							$('#example').DataTable().ajax.reload();
-							alert("수정되었습니다.");
-						}
-				  });
-				  
-				});
-
-				 // delete
-				 $("#btnDel").click(function(){
-					var id  = $('#id').val();
-					console.log(id)
-
-					$.ajax({
-						url: "contact_del.php",
-						type: "POST",
-						data:{
-							id: id,
-						},
-						success: function(data){
-							$("#modal").modal("hide");
-							$('#example').DataTable().ajax.reload();
-							alert("삭제되었습니다.");
-						}
-					})
-
-				});
-				
-				
-			//휴대폰 번호에서 대시 ('-') 빼는 함수
-			function NumReplace(val) {
-				var num = 0;
-				if (typeof val != "undefined" && val != null && val != "") {
-					num = String(val.replace(/-/gi, ''));
-				}
-				return num;
-			}
-
-			//Serialize에서 특정값 변경하는 함수 
-			function changeSerialize(values, k, v) {
-				var found = false;
-
-				for (i = 0; i < values.length && !found; i++) {
-					if (values[i].name == k) {
-						values[i].value = v;
-						found = true;
-					}
-				}
-				if (!found) {
-					values.push({
-						name: k,
-						value: v
 					});
-				}
-				return values;
-			}
-				
-
-
+				});
+		      
 			});
 			
 			
