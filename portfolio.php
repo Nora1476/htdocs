@@ -4,7 +4,7 @@
 		  /* 서버 접속 */
 		  require_once("./dbconfig.php");
 		 
-		  $sql="SELECT a.file, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
+		  $sql="SELECT a.file, a.seq, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno where seq=1
 		    		GROUP BY b.title ORDER BY b.no DESC ";
 		  
 		  $result = mysqli_query($conn, $sql);
@@ -83,7 +83,7 @@ Follow: http://www.twitter.com/themehats
 					<!-- BEGIN: BRAND -->
 					<div class="c-navbar-wrapper clearfix">
 						<div class="c-brand c-pull-left">
-							<a href="index.html" class="c-logo">
+							<a href="index.php" class="c-logo">
 								<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo">
 								<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo-inverse">
 								<img src="./img_main/logo1.png" alt="Gongan" class="c-mobile-logo">
@@ -131,7 +131,7 @@ Follow: http://www.twitter.com/themehats
 			<div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold">
 				<div class="container">
 					<div class="c-page-title c-pull-left">
-						<h3 class="c-font-uppercase c-font-sbold">Portfolio</h3>
+						<h3 class="c-font-uppercase c-font-sbold"><a class="c-link" href="#">Portfolio</a></h3>
 					</div>
 				</div>
 			</div>
@@ -204,7 +204,7 @@ Follow: http://www.twitter.com/themehats
 							</li>
 							<li>
 								<a href="https://blog.naver.com/spaceworkshop" target=”_blank” > 
-									<img id="naver" src="./img_main/naver.png" alt="" >
+									<img id="naver" src="./img_main/naver.png" alt="" style="margin-top:-5px;" >
 								</a>
 							</li>
 						</ul>

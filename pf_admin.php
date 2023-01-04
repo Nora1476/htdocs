@@ -25,9 +25,7 @@ Follow: http://www.twitter.com/themehats
 				<meta content="" name="description" />
 				<meta content="" name="author" />
 				<!-- BEGIN GLOBAL MANDATORY STYLES -->
-				<link
-    href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
-    rel='stylesheet' type='text/css'>
+				<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all' rel='stylesheet' type='text/css'>
 					<link href="./assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -111,9 +109,12 @@ Follow: http://www.twitter.com/themehats
 								<li class="c-onepage-link ">
 									<a href="pf_admin.php" class="c-link">Portfolio</a>
 								</li>
+								 <li class="c-onepage-link " >
+		                <a href='admin_pw.php' class="c-link">Change Password</a>
+		             </li>
 								<li class="c-onepage-link " >
-		                <a href='admin_logout.php' class="c-link">Logout</a>
-		              </li>
+	                <a href='admin_logout.php' class="c-link">Logout</a>
+	              </li>
 							</ul>
 						</nav>
 						<!-- END: MEGA MENU -->
@@ -135,6 +136,7 @@ Follow: http://www.twitter.com/themehats
 					</div>
 				</div>
 			</div>
+
 			<!-- END: LAYOUT/BREADCRUMBS/BREADCRUMBS-1 -->
 			<!-- BEGIN: PAGE CONTENT -->
 			<div class="c-content-box c-size-md">
@@ -262,8 +264,8 @@ Follow: http://www.twitter.com/themehats
 														    <div class="inputFile">
 													        <label for="AddImgs" class="addImgBtn">공사후 </label>
 													        <input type="file" name="files[]" id="AddImgs"  accept=".jpg, .png, .gif" multiple /><!-- style="display:none;"-->
-														    </div>
-														    <ul id="Preview" class="sortable"></ul> 
+														    	<ul id="Preview" class="sortable"></ul>
+														    </div> 
 														</div>										    
 									        </li>
 									        
@@ -272,8 +274,8 @@ Follow: http://www.twitter.com/themehats
 														    <div class="inputFile">
 													        <label for="AddImgs2" class="addImgBtn">공사전 </label>
 													        <input type="file" name="files2[]" id="AddImgs2"  accept=".jpg, .png, .gif" multiple />
-														    </div>
-														    <ul id="Preview2" class="sortable"></ul> 
+														    	<ul id="Preview2" class="sortable"></ul> 
+														    </div> 
 														</div>										    
 									        </li>
 									        
@@ -282,8 +284,8 @@ Follow: http://www.twitter.com/themehats
 														    <div class="inputFile">
 													        <label for="AddImgs3" class="addImgBtn">평면도 </label>
 													        <input type="file" name="files3[]" id="AddImgs3"  accept=".jpg, .png, .gif" multiple />
+														    	<ul id="Preview3" class="sortable"></ul> 
 														    </div>
-														    <ul id="Preview3" class="sortable"></ul> 
 														</div>										    
 									        </li> 
 										    </ul>     
@@ -486,6 +488,7 @@ Follow: http://www.twitter.com/themehats
 	      var data = table.row(this).data();
 				id = data[0];  //전역스코프 속성으로 var 없이 변수 설정
 				
+				
 	      //모달창 backdrop, esc키로 창닫기 방지
 	      $("#modal").modal("show").modal({backdrop:'static', keyboard:false}); 
 	      					
@@ -666,16 +669,19 @@ Follow: http://www.twitter.com/themehats
 	      }
 		  });
 		  
-		  //미리보기 이미지 삭제
+			//미리보기 이미지 삭제
 		  $(document).on("click",".delBtn",function(){
-				//삭제할 이미지타이틀 가져와서 선택된 input배열에서 삭제
+				//삭제할 이미지타이틀 가져와서 선택된 input배열 동기화
+	
 		    var removeTargetId  = $(this).data('index'); 
 		    var removeTarget  =	$('#'+ removeTargetId );
-		    var files = $(this).closest('div').children().first().find('input')[0].files; 
+		    var files = $(this).closest('div').children('input')[0].files;
+		    //var files = $(this).closest('div').children().first().find('input')[0].files; 
+		    //console.log(files.attr('id')); 
+		    
 		    var dataTranster = new DataTransfer();
 		    
-
-				console.log(removeTarget);
+		   
 				
 				 Array.from(files)
                     .filter(file => file.lastModified != removeTargetId)
@@ -683,17 +689,11 @@ Follow: http://www.twitter.com/themehats
                     dataTranster.items.add(file);
                  });
                  
- 				 $(this).closest('div').children().first().find('input')[0].files = dataTranster.files;
+ 				$(this).closest('div').children('input')[0].files = dataTranster.files;
 
          removeTarget.parent('li').remove();
-        
-		    
-		 	 	//console.log(fileData.files);
-
-		 	 	//$(this).parent('li').remove();
 		 	 	
 		  });
-			
   		
   		//포트폴리오 수정		
     	$('#modal').on('submit', '#frm_modi', function(e) {	
@@ -710,8 +710,15 @@ Follow: http://www.twitter.com/themehats
 						$('#Preview, #Preview2, #Preview3').empty();
 						$("#AddImgs, #AddImgs2, #AddImgs3").val("");
 						//$("#modal").modal("hide");
-						$('#example').DataTable().ajax.reload();
-						$("#modal").reload();
+						//$('#example').DataTable().ajax.reload();
+						
+					 //모달창 리로드
+				    var link = $(e.relatedTarget);
+				    $(this).find(".modal-body").load(link.attr("href"));
+				    
+						
+						
+						//window.location.href = "";
 						
 						
 					}
@@ -747,6 +754,8 @@ Follow: http://www.twitter.com/themehats
 			border: 1px solid #b7b7b7;
 			list-style: none;
 	}
+
+	/* 
 	.addImgBtn{
 	    width: 80px !important;
 	    height: 80px !important;
@@ -756,7 +765,8 @@ Follow: http://www.twitter.com/themehats
 	    font-size: 15px !important;
 	    padding: 0 !important;
 	    text-align:center;
-	}
+	} 
+	*/
 
 	#Preview,#Preview2,#Preview3{
 	    list-style:none;

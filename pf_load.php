@@ -25,10 +25,11 @@
 $table = <<<EOT
  (
     SELECT 
-      a.file,
+      a.file, a.seq,
       b.*
     FROM pf_img a
     LEFT JOIN pf_list b ON b.no = a.mno
+    WHERE a.seq=1
     GROUP BY b.title
 
  ) temp

@@ -85,30 +85,10 @@ Follow: http://www.twitter.com/themehats
 						<div class="c-brand c-pull">
 							<a href="index.html" class="c-logo">
 								<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo">
-									<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo-inverse">
-										<img src="./img_main/logo1.png" alt="Gongan" class="c-mobile-logo">
+								<img src="./img_main/logo1.png" alt="Gongan" class="c-desktop-logo-inverse">
+								<img src="./img_main/logo1.png" alt="Gongan" class="c-mobile-logo">
 							</a>
-							
-						</div>
-						<!-- END: BRAND -->
-						<!-- BEGIN: HOR NAV -->
-						<!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
-						<!-- BEGIN: MEGA MENU -->
-						<nav
-            class="c-mega-menu c-mega-menu-onepage c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold"
-            data-onepage-animation-speed="700" style="display:none;">
-							<ul class="nav navbar-nav c-theme-nav">
-								<li class="c-onepage-link ">
-									<a href="portfolio_admin.php" class="c-link">Portfolio</a>
-								</li>
-								<li class="c-onepage-link ">
-									<a href="#contact" class="c-link">Contact</a>
-								</li>
-							</ul>
-						</nav>
-						<!-- END: MEGA MENU -->
-						<!-- END: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
-						<!-- END: HOR NAV -->
+						</div>						
 					</div>
 				</div>
 			</div>
@@ -265,12 +245,12 @@ Follow: http://www.twitter.com/themehats
 	});
 		</script>
 		<!-- END: THEME SCRIPTS -->
-		<!-- BEGIN: PAGE SCRIPTS -->
-		<script src="./assets/demos/default/js/scripts/revo-slider/slider-7.js" type="text/javascript"></script>
+		<!-- BEGIN: PAGE SCRIPTS google-map
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLPWnOu970nrxAY1eApfQb0UKBaxov3zg"
     type="text/javascript"></script>
 		<script src="./assets/plugins/gmaps/gmaps.js" type="text/javascript"></script>
-		<script src="./assets/demos/default/js/scripts/pages/contact.js" type="text/javascript"></script>
+		<script src="./assets/demos/default/js/scripts/pages/contact.js" type="text/javascript"></script>-->
+		<script src="./assets/demos/default/js/scripts/revo-slider/slider-7.js" type="text/javascript"></script>
 		<!-- END: PAGE SCRIPTS -->
 		<!-- END: LAYOUT/BASE/BOTTOM -->
 	</body>

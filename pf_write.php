@@ -41,23 +41,20 @@ Follow: http://www.twitter.com/themehats
 				<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
 				<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
 				<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
-			
+
 				<!-- END THEME STYLES -->
 				<link rel="shortcut icon" href="favicon.ico" />
 				<link href="./main.css" rel="stylesheet" type="text/css">
 				<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 				
-				<!-- 구글폰트 -->
-				<link rel="preconnect" href="https://fonts.googleapis.com">
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-				<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-				<link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
+				
 								
 	</head>
 	
 
 	
 	<body class="c-layout-header-fixed c-layout-header-mobile-fixed">
+		
 		
 		
 		<?php
@@ -103,14 +100,17 @@ Follow: http://www.twitter.com/themehats
             data-onepage-animation-speed="700">
 							<ul class="nav navbar-nav c-theme-nav">
 								<li class="c-onepage-link ">
-									<a href="pf_admin.php" class="c-link">Portfolio</a>
-								</li>
-								<li class="c-onepage-link ">
 									<a href="index_admin.php#contact" class="c-link">Contact</a>
 								</li>
+								<li class="c-onepage-link ">
+									<a href="pf_admin.php" class="c-link">Portfolio</a>
+								</li>
+								 <li class="c-onepage-link " >
+		                <a href='admin_pw.php' class="c-link">Change Password</a>
+		             </li>
 								<li class="c-onepage-link " >
-		                <a href='admin_logout.php' class="c-link">Logout</a>
-		              </li>
+	                <a href='admin_logout.php' class="c-link">Logout</a>
+	              </li>
 							</ul>
 						</nav>
 						<!-- END: MEGA MENU -->
@@ -128,10 +128,12 @@ Follow: http://www.twitter.com/themehats
 			<div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold">
 				<div class="container">
 					<div class="c-page-title c-pull-left">
-						<h3 class="c-font-uppercase c-font-sbold">Portfolio > Write </h3>
+						<h3 class="c-font-uppercase c-font-sbold"><a href="pf_admin.php" class="c-link"> Portfolio </a> > Write </h3>
 					</div>
 				</div>
 			</div>
+			
+
 			<!-- END: LAYOUT/BREADCRUMBS/BREADCRUMBS-1 -->
 			<!-- BEGIN: PAGE CONTENT -->
 			<div class="c-content-box c-size-md">
@@ -198,8 +200,9 @@ Follow: http://www.twitter.com/themehats
 													    <div class="inputFile">
 												        <label for="AddImgs" class="addImgBtn">공사후 </label>
 												        <input type="file" name="files[]" id="AddImgs"  accept=".jpg, .png, .gif" multiple /><!-- style="display:none;"-->
+												        <ul id="Preview" class="sortable"></ul> 
 													    </div>
-													    <ul id="Preview" class="sortable"></ul> 
+													   
 													</div>										    
 								        </li>
 								        
@@ -208,8 +211,8 @@ Follow: http://www.twitter.com/themehats
 													    <div class="inputFile">
 												        <label for="AddImgs2" class="addImgBtn">공사전 </label>
 												        <input type="file" name="files2[]" id="AddImgs2"  accept=".jpg, .png, .gif" multiple />
-													    </div>
-													    <ul id="Preview2" class="sortable"></ul> 
+												        <ul id="Preview2" class="sortable"></ul> 
+													    </div>	    
 													</div>										    
 								        </li>
 								        
@@ -218,8 +221,8 @@ Follow: http://www.twitter.com/themehats
 													    <div class="inputFile">
 												        <label for="AddImgs3" class="addImgBtn">평면도 </label>
 												        <input type="file" name="files3[]" id="AddImgs3"  accept=".jpg, .png, .gif" multiple />
+												         <ul id="Preview3" class="sortable"></ul> 
 													    </div>
-													    <ul id="Preview3" class="sortable"></ul> 
 													</div>										    
 								        </li> 
 									    </ul>     
@@ -498,14 +501,17 @@ Follow: http://www.twitter.com/themehats
 		  
 		  //미리보기 이미지 삭제
 		  $(document).on("click",".delBtn",function(){
-				//삭제할 이미지타이틀 가져와서 선택된 input배열에서 삭제
+				//삭제할 이미지타이틀 가져와서 선택된 input배열 동기화
+	
 		    var removeTargetId  = $(this).data('index'); 
 		    var removeTarget  =	$('#'+ removeTargetId );
-		    var files = $(this).closest('div').children().first().find('input')[0].files;  //files 확인안됨 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+		    var files = $(this).closest('div').children('input')[0].files;
+		    //var files = $(this).closest('div').children().first().find('input')[0].files; 
+		    //console.log(files.attr('id')); 
+		    
 		    var dataTranster = new DataTransfer();
 		    
-
-				console.log(removeTarget);
+		   
 				
 				 Array.from(files)
                     .filter(file => file.lastModified != removeTargetId)
@@ -513,14 +519,9 @@ Follow: http://www.twitter.com/themehats
                     dataTranster.items.add(file);
                  });
                  
- 				 $(this).closest('div').children().first().find('input')[0].files = dataTranster.files;
+ 				$(this).closest('div').children('input')[0].files = dataTranster.files;
 
          removeTarget.parent('li').remove();
-        
-		    
-		 	 	//console.log(fileData.files);
-
-		 	 	//$(this).parent('li').remove();
 		 	 	
 		  });
 			
@@ -553,6 +554,8 @@ Follow: http://www.twitter.com/themehats
 			border: 1px solid #b7b7b7;
 			list-style: none;
 	}
+	
+	/* 
 	.addImgBtn{
 	    width: 80px !important;
 	    height: 80px !important;
@@ -562,7 +565,8 @@ Follow: http://www.twitter.com/themehats
 	    font-size: 15px !important;
 	    padding: 0 !important;
 	    text-align:center;
-	}
+	} 
+	*/
 
 	#Preview,#Preview2,#Preview3{
 	    list-style:none;

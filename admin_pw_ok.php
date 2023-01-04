@@ -25,19 +25,19 @@
 	    $sql = "SELECT password FROM gongan_login WHERE admin = '" . $session_username . "';";
 	    $result = mysqli_query( $conn, $sql );
 	    while ( $row = mysqli_fetch_array( $result ) ) {
-	      $encrypted_password = $row[ 'password' ];
+	      $db_password = $row[ 'password' ];
 	    }
 	    
-	    if ( $current_password == $encrypted_password ) {
+	    if ( $current_password == $db_password ) {
 	      if ( $new_password == $new_password_confirm ) {
-	        //$encrypted_new_password = password_hash( $new_password, PASSWORD_DEFAULT);
-	        $sql_change_password = "UPDATE gongan_login SET password = '" . $new_password . "' WHERE admin = '" . $session_username . "';";
+	      	$sql_change_password = "UPDATE gongan_login SET password = '" . $new_password . "' WHERE admin = '" . $session_username . "';";
 	        mysqli_query( $conn, $sql_change_password );
-	        echo '비밀번호가 변경되었습니다. 다시 로그인 해주세요!';
-	        //header( 'Location: admin_main.php' );
-	      } else {
-	        echo '새로운 비밀번호가 일치하지않습니다.'
+	        session_destroy();
+	        echo '비밀번호가 성공적으로 변경되었습니다. 다시 로그인 해주세요.';
+	      } else{
+	      	echo '새로운 비밀번호가 일치하지 않습니다.';
 	      }
+	      
 	    } else {
 	      echo '현재 비밀번호가 틀렸습니다.';
 	    }

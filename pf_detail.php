@@ -8,6 +8,15 @@
 		  $no = $_GET['no'];
 		  		  
 		  settype( $_GET['no'], 'integer');
+		  
+		  $sql_info=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
+		    		where b.no=$no and a.seq=1 group by a.mno ";
+		  
+		  $sql_info2=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
+		    		where b.no=$no and a.seq=1 group by b.no ";
+		 
+			$sql_info3=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
+		    		where b.no=$no group by b.title ";
 		 			  
 			$sql=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
 		    		where b.no=$no and a.seq=1 ";
@@ -18,9 +27,14 @@
 		 	$sql3=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
 	    		where b.no=$no and a.seq=3 ";  	   		
 		    		
+		  $result_info = mysqli_query($conn, $sql_info);
+		  $result_info2 = mysqli_query($conn, $sql_info2);   
+		  $result_info3 = mysqli_query($conn, $sql_info3); 		
 			$result = mysqli_query($conn, $sql);	
 			$result2 = mysqli_query($conn, $sql2);
 			$result3 = mysqli_query($conn, $sql3);
+			
+			$row_info3 = mysqli_fetch_array($result_info3);
 				
 		?>
 
@@ -142,12 +156,13 @@ Follow: http://www.twitter.com/themehats
 		<!-- BEGIN: PAGE CONTENT -->
 		
 		<div class="c-layout-breadcrumbs-1 c-fonts-uppercase c-fonts-bold">
-				<div class="container">
-					<div class="c-page-title c-pull-left">
-						<h3 class="c-font-uppercase c-font-sbold">Portfolio > Detail</h3>
-					</div>
+			<div class="container">
+				<div class="c-page-title c-pull-left">
+					<h3 class="c-font-uppercase c-font-sbold"> <a href="portfolio.php" class="c-link">Portfolio</a> > Detail</h3>
 				</div>
 			</div>
+		</div>
+
 		
 		<!-- BEGIN: CONTENT/TABS/TAB-1 -->
 		<div class="c-content-box c-size-md">
@@ -202,24 +217,29 @@ Follow: http://www.twitter.com/themehats
 					
 					<div class="cbp-l-project-container">
 				    <div class="cbp-l-project-desc">
-				        <div class="cbp-l-project-desc-title"><span><? echo $row['title']; ?></span></div>
+				        <div class="cbp-l-project-desc-title">
+				        	<span style="font-size:25px;">
+				        		<? 
+					        		while($row_info = mysqli_fetch_array($result_info)){														
+									 		echo $row_info['title'];	
+											}
+									 	 ?>
+				        	</span>
+				        </div>
 				        <div class="cbp-l-project-desc-text">
-									<? echo $row['cont']; ?>
-									설명첨부
-									Lorem ipsum dolor sit amet, consectetuer
-									adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-									magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-									exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-									consequat.
+				        	<? 
+				        		while($row_info2 = mysqli_fetch_array($result_info2)){														
+									 		echo $row_info2['cont'];	
+										}
+								 	 ?>
 				        </div>
 				    </div>
 				    <div class="cbp-l-project-details">
 				        <div class="cbp-l-project-details-title"><span>Detail</span></div>
-
 				        <ul class="cbp-l-project-details-list">
-			            <li><strong>Category</strong><? echo $row['title']; ?></li>
-			            <li><strong>Area</strong> <? echo $row['area']; ?> </li>
-			            <li><strong>Location</strong> <? echo $row['location']; ?> </li>
+			            <li><strong>Category</strong><? echo $row_info3['title']; ?></li>
+			            <li><strong>Area</strong> <? echo $row_info3['area']; ?> </li>
+			            <li><strong>Location</strong> <? echo $row_info3['location']; ?> </li>
 				        </ul>
 				    </div>
 					</div>
@@ -359,7 +379,7 @@ Follow: http://www.twitter.com/themehats
 
 	.slick-slide img {
 		width: 100% !important;
-  	height: auto;
+  	max-height: 800px;
   	display: block;
 	}
 	.slick-next, .slick-prev {

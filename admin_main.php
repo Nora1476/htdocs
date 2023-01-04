@@ -1,7 +1,7 @@
 
-
 <!DOCTYPE html>
-<!-- 
+
+<!--
 Theme: JANGO - Ultimate Multipurpose HTML Theme Built With Twitter Bootstrap 3.3.7
 Version: 2.0.1
 Author: Themehats
@@ -11,13 +11,13 @@ Contact: support@themehats.com
 Follow: http://www.twitter.com/themehats
 -->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
+<!--[if !IE]>-->
 <html lang="en">
 	<!--<![endif]-->
 	<!-- BEGIN HEAD -->
 	<head>
 		<meta charset="utf-8" />
-		<title>공간공작소</title>
+		<title>공간공작소_관리자</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 			<meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -25,39 +25,38 @@ Follow: http://www.twitter.com/themehats
 				<meta content="" name="author" />
 				<!-- BEGIN GLOBAL MANDATORY STYLES -->
 				<link
-				    href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
-				    rel='stylesheet' type='text/css'>
+    href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all'
+    rel='stylesheet' type='text/css'>
 					<link href="./assets/plugins/socicon/socicon.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/bootstrap-social/bootstrap-social.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/animate/animate.min.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
 					<!-- END GLOBAL MANDATORY STYLES -->
 					<!-- BEGIN: BASE PLUGINS  -->
+					<link href="./assets/plugins/revo-slider/css/settings.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/revo-slider/css/layers.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/plugins/revo-slider/css/navigation.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/owl-carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 					<link href="./assets/plugins/slider-for-bootstrap/css/slider.css" rel="stylesheet" type="text/css" />
 					<!-- END: BASE PLUGINS -->
 					<!-- BEGIN THEME STYLES -->
-					<link href="./assets/demos/default/css/plugins.css" rel="stylesheet" type="text/css" />
-					<link href="./assets/demos/default/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
-					<link href="./assets/demos/default/css/themes/default.css" rel="stylesheet" id="style_theme" type="text/css" />
-					<link href="./assets/demos/default/css/custom.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/demos/default/css/plugins-rtl.css" rel="stylesheet" type="text/css" />
+					<link href="./assets/demos/default/css/components-rtl.css" id="style_components" rel="stylesheet" type="text/css" />
+					<link href="./assets/demos/default/css/themes/default-rtl.css" rel="stylesheet" id="style_theme" type="text/css" />
+					<link href="./assets/demos/default/css/custom-rtl.css" rel="stylesheet" type="text/css" />
 					<!-- END THEME STYLES -->
-					
 					<link rel="shortcut icon" href="favicon.ico" />
-					<link href="./main.css" rel="stylesheet" type="text/css">
-					
-					<!--BEGIN: datatables-->
-					<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-					<link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-					<!--END: datatables-->
-
+					<link href="./main.css?after" rel="stylesheet" type="text/css">
+						<!--BEGIN: datatables-->
+						<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+						<link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
 	</head>
-	<body class="c-layout-header-fixed c-layout-header-mobile-fixed">
-		
+	<body class="c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen c-layout-header-topbar">
+		    
 		
 		<?php
 			session_start();
@@ -74,140 +73,145 @@ Follow: http://www.twitter.com/themehats
 		?>
 		
 		
-	
-			<header class="c-layout-header c-layout-header-onepage c-layout-header-4 c-layout-header-default-mobile" id="home"
-	    data-minimize-offset="40">
-				<div class="c-navbar">
-					<div class="container-fluid">
-						<!-- BEGIN: BRAND -->
-						<div class="c-navbar-wrapper clearfix">
-							<div class="c-brand c-pull-left">
-								<a href="admin_main.php" class="c-logo">
-									<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo">
-										<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo-inverse">
-											<img src="./img_main/logo1.png" alt="JANGO" class="c-mobile-logo">
-								</a>
-								<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
-									<span class="c-line"></span>
-									<span class="c-line"></span>
-									<span class="c-line"></span>
-								</button>
+		
+		
+		<!-- BEGIN: LAYOUT/HEADERS/HEADER-ONEPAGE -->
+		<!-- BEGIN: HEADER -->
+		<header class="c-layout-header c-layout-header-onepage c-layout-header-4 c-layout-header-default-mobile" id="home"
+	    			data-minimize-offset="40" style="background:white;">
+			<div class="c-navbar">
+				<div class="container-fluid">
+					<!-- BEGIN: BRAND -->
+					<div class="c-navbar-wrapper clearfix">
+						<div class="c-brand c-pull-right">
+							<a href="admin_main.php" class="c-logo">
+								<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo">
+								<img src="./img_main/logo1.png" alt="JANGO" class="c-desktop-logo-inverse">
+								<img src="./img_main/logo1.png" alt="JANGO" class="c-mobile-logo">
+							</a>
+							<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+								<span class="c-line"></span>
+								<span class="c-line"></span>
+								<span class="c-line"></span>
+							</button>
+						</div>
+						<!-- END: BRAND -->
+						<!-- BEGIN: HOR NAV -->
+						<!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
+						<!-- BEGIN: MEGA MENU -->
+						<nav
+            class="c-mega-menu c-mega-menu-onepage c-pull-left c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold"
+            data-onepage-animation-speed="700">
+							<ul class="nav navbar-nav c-theme-nav">
+								<li class="c-onepage-link " >
+		                <a href='admin_logout.php' class="c-link">Logout</a>
+		             </li>
+		             <li class="c-onepage-link " >
+		                <a href='admin_pw.php' class="c-link">Change Password</a>
+		             </li>
+		             <li class="c-onepage-link ">
+									<a href="pf_admin.php" class="c-link">Portfolio</a>
+								</li>
+								<li class="c-onepage-link ">
+									<a href="index_admin.php#contact" class="c-link">Contact</a>
+								</li>
+							</ul>
+						</nav>
+						<!-- END: MEGA MENU -->
+						<!-- END: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
+						<!-- END: HOR NAV -->
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- END: HEADER -->
+		<!-- END: LAYOUT/HEADERS/HEADER-ONEPAGE -->
+		
+		<!-- BEGIN: PAGE CONTAINER -->
+		<div class="c-layout-page">
+			
+			<section class="c-layout-revo-slider c-layout-revo-slider-7" dir="ltr">
+	      <div class="tp-banner-container tp-fullscreen tp-fullscreen-mobile">
+	        <div class="c-singup-form">
+	          <h3 class="c-font-54 c-font-thin c-font-white c-margin-b-40 c-font-uppercase">
+	            공간공작소  <span class="c-theme-font c-font-bold"> 관리자 </span> 페이지
+	          </h3>
+
+	          <h5 class="c-font-24 c-font-thin c-font-uppercase c-font-white c-subtitle c-margin-b-40">
+	            관리자 페이지에 오신 것을 환영합니다.
+	          </h5>
+						
+	        </div>
+	        <div class="tp-banner rev_slider" data-version="5.0">
+	          <ul>
+	            <!--BEGIN: SLIDE #1 -->
+	            <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
+	              <img alt="" src="./assets/base/img/content/backgrounds/bg-56.jpg" data-bgposition="center center"
+	                data-bgfit="cover" data-bgrepeat="no-repeat">
+	            </li>
+	            <!--END -->
+
+	            <!--BEGIN: SLIDE #2 -->
+	            <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
+	              <img alt="" src="./assets/base/img/content/backgrounds/bg-57.jpg" data-bgposition="center center"
+	                data-bgfit="cover" data-bgrepeat="no-repeat">
+	            </li>
+	            <!--END -->
+	          </ul>
+	        </div>
+	      </div>
+	    </section>	
+	    
+    	<section id="contact">
+				<!-- BEGIN: CONTENT/CONTACT/FEEDBACK-2 -->
+				<div class="c-content-box c-size-md c-no-padding c-bg-img-center">
+					<div class="container">
+						<div class="c-content-feedback-1 c-option-2">
+							<div class="c-content-title-1">
+								<h3 class="c-center c-font-uppercase c-font-bold">Contact</h3>
+								<div class="c-line-center c-theme-bg"></div>
 							</div>
-							<!-- END: BRAND -->
-							<!-- BEGIN: HOR NAV -->
-							<!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
-							<!-- BEGIN: MEGA MENU -->
-							<nav
-	            class="c-mega-menu c-mega-menu-onepage c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold"
-	            data-onepage-animation-speed="700">
-								<ul class="nav navbar-nav c-theme-nav">
-									<li class="c-onepage-link ">
-										<a href="index_admin.php#contact" class="c-link">Contact</a>
-									</li>
-									<li class="c-onepage-link ">
-										<a href="pf_admin.php" class="c-link">Portfolio</a>
-									</li>
-									<li class="c-onepage-link " >
-			                <a href='admin_pw.php' class="c-link">Change Password</a>
-			             </li>
-									<li class="c-onepage-link " >
-			                <a href='admin_logout.php' class="c-link">Logout</a>
-			             </li>
-								</ul>
-							</nav>
-							<!-- END: MEGA MENU -->
-							<!-- END: LAYOUT/HEADERS/MEGA-MENU-ONEPAGE -->
-							<!-- END: HOR NAV -->
+							<div class="row" style="padding:0;">
+								<div class="col-md-1"></div>
+								<div class="col-md-10">
+									<div class="c-contact">
+
+									<table id="example" class="display" style="width:100%">
+						        <thead>
+					            <tr>
+					            	<th>ID</th>
+				                <th>성함</th>
+				                <th>연락처</th>
+				                <th>현장위치</th>
+				                <th>임대차계약</th>
+				                <th>유형</th>
+				                <th>기타내용</th>
+				                <th>문의일자</th>
+					            </tr>
+						        </thead>
+						        <tfoot>
+					            <tr>
+					            	<th>ID</th>
+				                <th>성함</th>
+				                <th>연락처</th>
+				                <th>현장위치</th>
+				                <th>임대차계약</th>
+				                <th>유형</th>
+				                <th>기타내용</th>
+				                <th>문의일자</th>
+					            </tr>
+						        </tfoot>
+							    </table>
+
+									</div>
+								</div>
+								<div class="col-md-1"></div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</header>
-		
-		  <!-- BEGIN: PAGE CONTAINER -->
-		  <div class="c-layout-page">
-
-		    <section class="c-layout-revo-slider c-layout-revo-slider-7" dir="ltr">
-		      <div class="tp-banner-container tp-fullscreen tp-fullscreen-mobile">
-		        <div class="c-singup-form">
-		          <h3 class="c-font-54 c-font-thin c-font-white c-margin-b-40 c-font-uppercase">
-		            공간공작소  <span class="c-theme-font c-font-bold"> 관리자 </span> 페이지
-		          </h3>
-
-		          <h5 class="c-font-24 c-font-thin c-font-uppercase c-font-white c-subtitle c-margin-b-40">
-		            관리자 페이지에 오신 것을 환영합니다.
-		          </h5>
-							
-		        </div>
-		        <div class="tp-banner rev_slider" data-version="5.0">
-		          <ul>
-		            <!--BEGIN: SLIDE #1 -->
-		            <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
-		              <img alt="" src="./assets/base/img/content/backgrounds/bg-56.jpg" data-bgposition="center center"
-		                data-bgfit="cover" data-bgrepeat="no-repeat">
-		            </li>
-		            <!--END -->
-
-		            <!--BEGIN: SLIDE #2 -->
-		            <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-style="dark">
-		              <img alt="" src="./assets/base/img/content/backgrounds/bg-57.jpg" data-bgposition="center center"
-		                data-bgfit="cover" data-bgrepeat="no-repeat">
-		            </li>
-		            <!--END -->
-		          </ul>
-		        </div>
-		      </div>
-		    </section>
-
-		    <section id="contact">
-					<!-- BEGIN: CONTENT/CONTACT/FEEDBACK-2 -->
-					<div class="c-content-box c-size-md c-no-padding c-bg-img-center">
-						<div class="container">
-							<div class="c-content-feedback-1 c-option-2">
-								<div class="c-content-title-1">
-									<h3 class="c-center c-font-uppercase c-font-bold">Contact</h3>
-									<div class="c-line-center c-theme-bg"></div>
-								</div>
-								<div class="row" style="padding:0;">
-									<div class="col-md-1"></div>
-									<div class="col-md-10">
-										<div class="c-contact">
-
-										<table id="example" class="display" style="width:100%">
-							        <thead>
-						            <tr>
-						            	<th>ID</th>
-					                <th>성함</th>
-					                <th>연락처</th>
-					                <th>현장위치</th>
-					                <th>임대차계약</th>
-					                <th>유형</th>
-					                <th>기타내용</th>
-					                <th>문의일자</th>
-						            </tr>
-							        </thead>
-							        <tfoot>
-						            <tr>
-						            	<th>ID</th>
-					                <th>성함</th>
-					                <th>연락처</th>
-					                <th>현장위치</th>
-					                <th>임대차계약</th>
-					                <th>유형</th>
-					                <th>기타내용</th>
-					                <th>문의일자</th>
-						            </tr>
-							        </tfoot>
-								    </table>
-
-										</div>
-									</div>
-									<div class="col-md-1"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END: CONTENT/CONTACT/FEEDBACK-2 -->
-				</section>
+				<!-- END: CONTENT/CONTACT/FEEDBACK-2 -->
+			</section>
 
 				<!--Modal-->
 				<div class="modal fade" id="modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
